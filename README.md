@@ -4,13 +4,14 @@ A starter site for creating your own blog with Angular and Node.js.
 ## Getting Started
 To get the project running locally on your machine:
 1. Fork this repository
-2. Clone the repository `git clone git@github.com:tannerdolby/angular-node-blog-template.git`
+2. Clone `git clone git@github.com:tannerdolby/angular-node-blog-template.git`
 3. Install dependencies `npm install` (in both `blog-client` and `node-app` directories)
 4. Serve locally `npm run dev`
 
 ## Features
 - Home page with recent posts
 - Blog page with all blog posts
+- Post page with the specific blog post
 - About me page
 - Contact me page
 
@@ -43,7 +44,7 @@ Now all of your blog posts in the `/pages` directory and metadata in `/assets/bl
 ## Contributing
 Feel free to contribute to this project by suggesting a new feature or modification. I built this template for others to use and personalize, so don't hesitate to let me know what you'd like to see added/modified.
 
-- Open an issue for any features/modifications you would like too see.
+- Open an [issue](https://github.com/tannerdolby/angular-node-blog-template/issues) for any features/modifications you would like too see.
 - Have a look at the contributing guidelines before submitting a PR.
 
 ## Maintainer
