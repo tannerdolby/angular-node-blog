@@ -1,0 +1,46 @@
+[
+    {
+        "title": "Learn about Collections in MongoDB",
+        "date": "3/20/2021",
+        "tags": [
+            "mongodb",
+            "nosql"
+        ],
+        "template": "learn-mongo-db.html",
+        "image": "./assets/images/mongodb.jpeg",
+        "preview": "MongoDB is becoming one the most versatile and popular databases. I personally really enjoy working with NoSQL databases like MongoDB because I prefer using JSON to store data rather than columns and rows (vanilla SQL)."
+    },
+    {
+        "title": "Learn About Components in Angular",
+        "date": "3/22/2021",
+        "tags": [
+            "angular",
+            "typescript"
+        ],
+        "template": "learn-angular.html",
+        "image": "./assets/images/angular.png",
+        "preview": "New to Angular? Using components allows developers to keep things modular when building projects with Angular. Components are the building blocks in single page applications (SPAs)."
+    },
+    {
+        "title": "Learn the basics of Node.js",
+        "date": "3/25/2021",
+        "tags": [
+            "node.js",
+            "javascript"
+        ],
+        "template": "learn-node-js.html",
+        "image": "./assets/images/nodeJS.png",
+        "preview": "Node.js is a popular choice in today's development environment as a server side scripting language. It allows you to develop your entire application around JavaScript and it's blazing fast!"
+    },
+    {
+        "title": "Some Random Post",
+        "date": "03/30/2021",
+        "tags": [
+            "random",
+            "javascript"
+        ],
+        "template": "random-post.html",
+        "preview": "This is the most random post ever. Probably filled with more randomness than ever before witnessed."
+    }
+
+]

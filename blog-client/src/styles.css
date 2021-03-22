@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --link-accessible: #2540AD;
+    --btn-primary: #4285f4;
+    --btn-danger: #ff3547;
+}
+
+body {
+    font-size: 1rem;
+    font-family: "Noto Serif", sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
+    line-height: 1.7;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #fff;
+    background-color: rgb(248, 248, 248);
+}
+
+pre {
+    background-color: rgb(238, 238, 238);
+    padding: 0 1rem;
+    font-family: 'Monaco', sans-serif;
+}
+
+pre code {
+    padding: .5rem;
+}
+
+code {
+    background: rgb(238, 238, 238);
+    font-size: .9rem;
+}
+
+:not(pre) code {
+    white-space: pre;
+    word-spacing: normal;
+    word-wrap: normal;
+    text-align: left;
+    font-family: 'Menlo', 'Monaco', sans-serif;
+    padding: .25rem;
+}
+
+a {
+    color: var(--link-accessible);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+app-footer {
+    margin-top: auto;
+}

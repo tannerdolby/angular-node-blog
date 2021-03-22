@@ -1,0 +1,59 @@
+.wrapper {
+    max-width: 75ch;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: rgb(246, 246, 246);
+}
+
+.wrapper h1 {
+    font-size: 2.5rem;
+}
+
+.wrapper section {
+    margin: 3rem 0;
+}
+
+section article {
+    margin: 2rem auto;
+    border: .125rem solid transparent;
+    background: #fff;
+    padding: 1rem;
+}
+
+section article:hover {
+    border: .125rem solid lightgray;
+}
+
+
+section article .title {
+    margin: 0;
+}
+
+section article .title a {
+    text-decoration: underline;
+}
+
+section article .title a:hover {
+    text-decoration: none;
+}
+
+section article a {
+    color: var(--link-accessible);
+}
+
+section article .date {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+section article .date a:first-of-type {
+    margin-left: .1rem;
+}
+
+section article .date a {
+    margin: 0 .25rem;
+}
+
+section article .preview {
+    margin: 0;
+}

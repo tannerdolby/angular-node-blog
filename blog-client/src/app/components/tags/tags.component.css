@@ -1,0 +1,49 @@
+.wrapper {
+    max-width: 80ch;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+article {
+    border: .125rem solid transparent;
+    padding: 1rem;
+    background: #fff;
+    margin: 2rem 0;
+}
+
+article:hover {
+    border: .125rem solid lightgray;
+}
+
+article h2 {
+    margin: .35rem 0;
+}
+
+.tagged {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tagged button {
+    background: var(--btn-danger);
+    background: inherit;
+    padding: .5rem 1rem;
+    border: .1rem solid lightgray;
+}
+
+.tagged button:hover {
+    cursor: pointer;
+    background: hsl(0, 0%, 13%);
+    background: var(--btn-danger);
+    color: #fff;
+    border: .1rem solid transparent;
+}
+
+.date .tag {
+    margin: 0 .25rem;
+}
+
+.date .tag:first-of-type {
+    margin-left: .1rem;
+}

@@ -1,0 +1,69 @@
+header {
+    padding: 4rem 1rem;
+    background: #1b1c1d;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.bg {
+    background-color: rgb(248, 248, 248);
+}
+
+.wrapper {
+    max-width: 80ch;
+    padding: 1.5rem 1rem 4rem 1rem;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2rem;
+}
+
+article {
+    border: .125rem solid transparent;
+    padding: 1rem;
+    background: #fff;
+    margin: 2rem 0;
+}
+
+article:hover {
+    border: .125rem solid lightgray;
+}
+
+article h3 {
+    font-size: 1.5rem;
+    margin: .35rem 0;
+}
+
+article h3 a {
+    color: var(--link-accessible);
+    text-decoration: underline;
+}
+
+article h3 a:hover {
+    text-decoration: none;
+}
+
+.date {
+    margin: .5rem 0;
+    font-size: 1rem;
+}
+
+.content {
+    margin: .5rem 0;
+}
+
+.tag:first-of-type {
+    margin-left: .1rem;
+}
+
+.tag {
+    margin: 0 .25rem;
+    text-decoration: none;
+    color: var(--link-accessible);
+}
+
+.tag:hover {
+    text-decoration: underline;
+}

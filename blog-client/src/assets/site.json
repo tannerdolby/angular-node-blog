@@ -1,0 +1,17 @@
+{
+    "socials": {
+        "twitter": "https://twitter.com/tannerdolby",
+        "github": "https://github.com/tannerdolby",
+        "codepen": "https://codepen.com/tannerdolby"
+    },
+    "site": {
+        "author": "John Smith",
+        "email": "foobar@gmail.com",
+        "nav": {
+            "home": "/",
+            "blog": "/blog",
+            "about": "/about",
+            "contact": "/contact"
+        }
+    }
+}

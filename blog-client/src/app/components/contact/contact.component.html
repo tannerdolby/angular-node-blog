@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <section>
+        <h1>Contact</h1>
+        <p>Feel free to send me a message if you would like to discuss a project or opportunity. I'm also available through Twitter, if that's more your style.</p>
+        <form [formGroup]="contactForm" (ngSubmit)="submit()">
+            <label for="name">Your Name</label>
+            <input type="text" formControlName="name" name="name" id="name" placeholder="Enter name...">
+            <label for="email">Your Email</label>
+            <input type="email" formControlName="email" name="email" id="email" placeholder="Enter email...">
+            <label for="message">Your Message</label>
+            <textarea name="message" formControlName="message" id="message" placeholder="Enter message..."></textarea>
+            <div class="submit">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+</div>
+

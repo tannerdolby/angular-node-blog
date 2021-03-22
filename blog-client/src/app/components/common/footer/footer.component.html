@@ -1,0 +1,19 @@
+<footer>
+    <div class="wrapper">
+        <div class="row">
+            <ul class="l">
+                <li><a routerLink="{{ nav.home }}">Home</a></li>
+                <li><a routerLink="{{ nav.blog }}">Blog</a></li>
+                <li><a routerLink="{{ nav.about }}">About</a></li>
+                <li><a routerLink="{{ nav.contact }}">Contact</a></li>
+                <li><a href="{{ socials.twitter }}">Twitter</a></li>
+                <li><a href="{{ socials.github }}">Github</a></li>
+                <li><a href="{{ socials.codepen }}">CodePen</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>&copy; {{ currYear }} {{ author }}. Hosted with Netlify</p>
+            <button (click)="backToTop()">Back to top</button>
+        </div>
+    </div>
+</footer>

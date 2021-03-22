@@ -1,0 +1,18 @@
+<div class="bg">
+    <header>
+        <h1>Angular + Node.js Blog Template</h1>
+    </header>
+    <div class="wrapper">
+        <p>This is an Angular and Node.js blog template. The blog posts are created within the <code>/pages</code> directory and are rendered on their respective pages using an API endpoint and a single "posts" component which acts as a template to display each blog post. Update the <code>/assets/blog.json</code> data with each blog posts metadata.</p>
+        <section>
+            <h2>Recent Articles</h2>
+            <div class="articles">
+                <article *ngFor="let article of recent">
+                    <h3><a routerLink="/blog/{{ article.slug }}">{{ article.title }}</a></h3>
+                    <p class="date">Published on <time>{{ article.date | date }}</time> &bull; tagged with <a class="tag" *ngFor="let tag of article.tags" routerLink="/blog/category/{{ tag }}">#{{ tag }}</a></p>
+                    <p class="content">{{ article.preview }}</p>
+                </article>
+            </div>
+        </section>
+    </div>
+</div>

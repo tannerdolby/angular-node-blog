@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <h1>Blog</h1>
+    <div class="tagged">
+        <p *ngIf="postsWithTag.length > 1" class="posts-tagged">{{ postsWithTag.length }} posts tagged: #{{ tag }}</p>
+        <p *ngIf="postsWithTag.length === 1" class="posts-tagged">{{ postsWithTag.length }} post tagged: #{{ tag }}</p>
+        <button (click)="clear()">clear</button>
+    </div>
+    <section>
+        <article *ngFor="let article of postsWithTag">
+            <h2 class="title"><a routerLink="/blog/{{ article.slug }}">{{ article.title }}</a></h2>
+            <p class="date">Published on <time>{{ article.date | date }}</time> &bull; tagged with <a class="tag" *ngFor="let tag of article.tags" href="/blog/category/{{ tag }}">#{{ tag }}</a></p>
+            <p class="preview">{{ article.preview}}</p>
+        </article>
+    </section>
+</div>
