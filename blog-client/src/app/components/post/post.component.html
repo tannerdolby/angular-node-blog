@@ -1,7 +1,7 @@
 <div class="wrapper">
     <article *ngIf="postData.metadata !== undefined && postData.post !== undefined">
         <h1>{{ postData.metadata.title }}</h1>
-        <p class="date">Published on <time>{{ postData.metadata.date | date }}</time> &bull; tagged with <a class="tag" *ngFor="let tag of tags" href="/blog/category/{{ tag }}">#{{ tag }}</a></p>
+        <p class="date">Published on <time>{{ postData.metadata.date | date }}</time> &bull; tagged with <a class="tag" *ngFor="let tag of tags" routerLink="/blog/category/{{ tag }}">#{{ tag }}</a></p>
         <img src="{{ postData.metadata.image }}" alt="Some alt text">
         <p>{{ postData.metadata.preview }}</p>
         <div [innerHTML]="postData.post.content"></div>

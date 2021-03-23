@@ -8,7 +8,7 @@
     <section>
         <article *ngFor="let article of postsWithTag">
             <h2 class="title"><a routerLink="/blog/{{ article.slug }}">{{ article.title }}</a></h2>
-            <p class="date">Published on <time>{{ article.date | date }}</time> &bull; tagged with <a class="tag" *ngFor="let tag of article.tags" href="/blog/category/{{ tag }}">#{{ tag }}</a></p>
+            <p class="date">Published on <time>{{ article.date | date }}</time> &bull; tagged with <a #tag class="tag" *ngFor="let tag of article.tags" (click)="refresh(tag)" routerLink="/blog/category/{{ tag }}">#{{ tag }}</a></p>
             <p class="preview">{{ article.preview}}</p>
         </article>
     </section>

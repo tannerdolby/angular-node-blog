@@ -20,7 +20,6 @@ export class PostComponent implements OnInit {
     this.postService.getPost(slug || routerSlug).subscribe((response: any) => {
       this.postData = response;
       this.tags = response.metadata.tags;
-      console.log(response);
     });
    
   }

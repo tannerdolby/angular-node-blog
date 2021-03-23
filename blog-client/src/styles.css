@@ -25,24 +25,23 @@ pre {
     background-color: rgb(238, 238, 238);
     padding: 0 1rem;
     font-family: 'Monaco', sans-serif;
+    border-radius: .35rem;
 }
 
 pre code {
     padding: .5rem;
+    background: transparent;
 }
 
 code {
     background: rgb(238, 238, 238);
-    font-size: .9rem;
-}
-
-:not(pre) code {
     white-space: pre;
     word-spacing: normal;
     word-wrap: normal;
     text-align: left;
     font-family: 'Menlo', 'Monaco', sans-serif;
     padding: .25rem;
+    font-size: .9rem;
 }
 
 a {

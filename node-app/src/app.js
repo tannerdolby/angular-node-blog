@@ -14,6 +14,7 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 console.log(__dirname);
+// specify the mount path for the static directory `/dist`
 app.use("/", express.static("dist"));
 
 const postRouter = require("./routes/post");
