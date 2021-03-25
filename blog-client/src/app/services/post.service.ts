@@ -28,7 +28,9 @@ export class PostService {
     return this.http.get(`${this.postsUrl}`);
   }
 
-  slugify(title: string) {
-    return title.toLowerCase().split(" ").join("-");
+  slugify(str: string) {
+    const regex = new RegExp(/\W+/, "gm");
+    const slug = str.replace(regex, " ").toLowerCase().split(" ").join("-");
+    return slug;
   }
 }
