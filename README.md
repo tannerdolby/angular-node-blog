@@ -48,7 +48,7 @@ Feel free to contribute to this project by suggesting a new feature or modificat
 - Have a look at the contributing guidelines before submitting a PR.
 
 ## Remarks
-I'd love to see this being used out in the wild, so if you setup your blog with this template make sure to tag me [@tannerdolby](https://twitter.com/tannerdolby) with your post on Twitter! 🚀
+I'd love to see this being used out in the wild, so if you setup your blog using this template feel free to tweet about it and [tag me](https://twitter.com/tannerdolby)! 🚀
 
 ## Maintainer
 [@tannerdolby](https://github.com/tannerdolby)
