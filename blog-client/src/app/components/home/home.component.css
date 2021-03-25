@@ -27,10 +27,6 @@ article {
     margin: 2rem 0;
 }
 
-article:hover {
-    border: .125rem solid lightgray;
-}
-
 article h3 {
     font-size: 1.5rem;
     margin: .35rem 0;

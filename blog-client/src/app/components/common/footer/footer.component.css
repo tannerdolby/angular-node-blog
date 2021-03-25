@@ -89,20 +89,18 @@ footer .row {
 
 .copyright button {
     background: inherit;
+    text-decoration: underline;
     margin-left: 1.5rem;
     padding: .5rem 1rem;
-    border: .1rem solid #ddd;
+    border: none;
 }
 
 .copyright button:hover {
     cursor: pointer;
-    color: rgba(255,255,255,.92);
-    background: #1b1c1d;
-    background: hsl(0, 0%, 13%);
-    border: .1rem solid transparent;
+    text-decoration: none;
 }
 
-.l {
+.footer-nav {
     list-style: none;
     padding-left: 0;
     display: flex;

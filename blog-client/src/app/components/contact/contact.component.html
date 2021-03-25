@@ -5,12 +5,23 @@
         <form [formGroup]="contactForm" (ngSubmit)="submit()">
             <label for="name">Your Name</label>
             <input type="text" formControlName="name" name="name" id="name" placeholder="Enter name...">
+            <div class="form-error" *ngIf="cName.invalid && (cName.dirty || cName.touched)">
+                <p *ngIf="cName.errors.required">Name is required.</p>
+            </div>
             <label for="email">Your Email</label>
             <input type="email" formControlName="email" name="email" id="email" placeholder="Enter email...">
+            <div class="form-error" *ngIf="cEmail.invalid && (cEmail.dirty || cEmail.touched)">
+                <p *ngIf="cEmail.errors.required">Email is required.</p>
+                <p *ngIf="cEmail.errors.email">Invalid email format.</p>
+            </div>
             <label for="message">Your Message</label>
             <textarea name="message" formControlName="message" id="message" placeholder="Enter message..."></textarea>
+            <div class="form-error" *ngIf="cMessage.invalid && (cMessage.dirty || cMessage.touched)">
+                <p *ngIf="cMessage.errors.required">Message is required.</p>
+            </div>
             <div class="submit">
-                <button type="submit">Submit</button>
+                <button title="Please fill in all form fields." *ngIf="contactForm.status === 'INVALID'" disabled type="submit">Submit</button>
+                <button *ngIf="contactForm.status === 'VALID'" type="submit">Submit</button>
             </div>
         </form>
     </section>

@@ -6,4 +6,8 @@
         <p>{{ postData.metadata.preview }}</p>
         <div [innerHTML]="postData.post.content"></div>
     </article>
+    <div class="nav-posts" *ngIf="postData !== undefined">
+        <button (click)="prevPost(allPosts)">Previous</button>
+        <button (click)="nextPost(allPosts)">Next</button>
+    </div>
 </div>

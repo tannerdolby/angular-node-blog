@@ -39,3 +39,24 @@ article img {
 .tag:hover {
     text-decoration: underline;
 }
+
+.nav-posts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.nav-posts button {
+    border: .1rem solid #444;
+    padding: .5rem 1rem;
+    background-color: inherit;
+}
+
+.nav-posts button:hover {
+    cursor: pointer;
+    background-color: #444;
+    color: #fff;
+    border: .1rem solid transparent;
+}

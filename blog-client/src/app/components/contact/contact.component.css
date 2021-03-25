@@ -43,6 +43,10 @@ section form label {
     margin-top: 1rem;
 }
 
+section form label:first-of-type {
+    margin-top: .5rem;
+}
+
 section form textarea {
     resize: vertical;
     height: 6rem;
@@ -67,4 +71,13 @@ section form textarea {
     background: #378ad3;
     background: #3d82f1;
     cursor: pointer;
+}
+
+.form-error p {
+    color: #f06;
+    margin: 0;
+}
+
+.submit button:disabled {
+    cursor: help;
 }

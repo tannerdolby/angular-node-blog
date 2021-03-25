@@ -11,12 +11,16 @@ article {
     margin: 2rem 0;
 }
 
-article:hover {
-    border: .125rem solid lightgray;
-}
-
 article h2 {
     margin: .35rem 0;
+}
+
+article h2 a {
+    text-decoration: underline;
+}
+
+article h2 a:hover {
+    text-decoration: none;
 }
 
 .tagged {

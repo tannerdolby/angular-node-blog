@@ -21,7 +21,8 @@ export class BlogComponent implements OnInit {
     });
   }
 
-  slugify(title: String) {
-    return title.toLowerCase().split(" ").join("-");
+  slugify(str: string) {
+    const slug = this.postService.slugify(str);
+    return slug;
   }
 }

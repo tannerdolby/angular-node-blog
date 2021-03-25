@@ -21,6 +21,7 @@ export class TagsComponent implements OnInit {
       response.forEach((r: any) => {
         r.slug = this.postService.slugify(r.title);
       });
+      console.log(response);
       this.postsWithTag = response;
     })
   }
@@ -34,7 +35,10 @@ export class TagsComponent implements OnInit {
   }
 
   refresh(tag: string) {
-    this.postService.getPostsByTag(tag).subscribe(response => {
+    this.postService.getPostsByTag(tag).subscribe((response: any) => {
+      response.map((r: any) => {
+        r.slug = this.slugify(r.title);
+      });
       this.postsWithTag = response;
     });
     this.tag = tag;
