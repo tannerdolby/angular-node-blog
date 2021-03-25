@@ -41,12 +41,10 @@ router.get("/blog/:post", (req, res) => {
                                 }
                             });
                         }
-
                         // grab the specific post
                         const post = fileArr.filter(f => {
                             return f.slug == postSlug;
                         });
-  
                         // if the post exists
                         if (post[0]) {
                             // find corresponding metadata for post
