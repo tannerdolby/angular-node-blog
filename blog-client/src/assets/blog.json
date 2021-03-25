@@ -33,14 +33,15 @@
         "preview": "Node.js is a popular choice in today's development environment as a server side scripting language. It allows you to develop your entire application around JavaScript and it's blazing fast!"
     },
     {
-        "title": "Some Random Post",
+        "title": "Using the File System module",
         "date": "03/30/2021",
         "tags": [
-            "random",
-            "javascript"
+            "javascript",
+            "nodejs"
         ],
-        "template": "random-post.html",
-        "preview": "This is the most random post ever. Probably filled with more randomness than ever before witnessed."
+        "image": "./assets/images/nodeJS.png",
+        "template": "file-system.html",
+        "preview": "A tutorial on how to read files using the File System module."
     }
 
 ]
