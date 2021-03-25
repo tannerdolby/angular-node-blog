@@ -47,6 +47,9 @@ Feel free to contribute to this project by suggesting a new feature or modificat
 - Open an [issue](https://github.com/tannerdolby/angular-node-blog-template/issues) for any features/modifications you would like too see.
 - Have a look at the contributing guidelines before submitting a PR.
 
+## Remarks
+I'd love to see this being used out in the wild, so if you setup your blog with this template make sure to tag me [@tannerdolby](https://twitter.com/tannerdolby) with your post on Twitter! 🚀
+
 ## Maintainer
 [@tannerdolby](https://github.com/tannerdolby)
 
