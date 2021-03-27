@@ -10,9 +10,12 @@ const slugify = require("../_helpers/slugify");
 router.get("/blog/:post", (req, res) => {
     const { params } = req;
     const postSlug = params.post;
-    const app = req.app;
+    console.log(postSlug);
 
-    fs.readdir(dir, "utf8", (err, files) => {
+    fs.readdir("blog-client/src/app/pages", "utf8", (err, files) => {
+        if (err) {
+            console.error(err);
+        }
         let metadata;
         fileReader(files).then(data => {
             let fileArr = [];
@@ -24,8 +27,9 @@ router.get("/blog/:post", (req, res) => {
                 fileArr.push(fileObj);
             });
 
+            console.log(fileArr);
             if (fileArr.length === 0) {
-                res.status(400).json({ status: "FAILED", message: "Unable to read file." });
+                res.status(400).json({ status: "FAILED", message: "Unable to read filse." });
             } else {
                 fs.readFile(`${assetsDir}/blog.json`, "utf8", (err, data) => {
                     if (err) {
@@ -62,7 +66,7 @@ router.get("/blog/:post", (req, res) => {
             } 
         })
         .catch(err => {
-            res.status(400).json({ status: "FAILED", message: "Failed to read files." });
+            res.status(400).json({ status: "FAILED", message: "Failed to read files.", err: err });
         });
     });
 });

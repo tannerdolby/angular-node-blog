@@ -5,6 +5,7 @@ header {
     background: #ecebeb;
     background: #bee2c4;
     background: #162f33;
+    background: #ececec;
     /* background: #2b6447; */
     /* background-color: #0ca4aa; */
     /* background-color: #5f8aa1; */
@@ -18,6 +19,7 @@ header {
     /* background: #202429; */
     text-align: center;
     margin: 0 auto;
+    border-bottom: .1rem solid lightgray;
 }
 
 header h1 {
