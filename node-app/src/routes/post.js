@@ -65,7 +65,6 @@ router.get("/blog/:post", (req, res) => {
             res.status(400).json({ status: "FAILED", message: "Failed to read files." });
         });
     });
-    app.use("/.netlify/functions/server", router);
 });
 
 module.exports = router;

@@ -1,8 +1,8 @@
 {
-  "name": "node-app",
+  "name": "angular-node-blog-template",
   "version": "1.0.0",
-  "description": "Node app for a basic blog template",
-  "main": "app.js",
+  "description": "Node.js + Angular blog template prepared for Netlify.",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -13,15 +13,27 @@
   },
   "devDependencies": {},
   "scripts": {
+    "build": "cd ../blog-client && ng build --prod && cd ../node-app && netlify-lambda build src",
     "start": "node ./src/app.js",
     "dev": "nodemon ./src/app.js",
     "serve": "netlify-lambda serve src",
-    "build": "netlify-lambda build src"
+    "start-l": "netlify-lambda build src"
   },
   "keywords": [
-    "Node.js",
-    "Blog-template"
+    "netlify",
+    "angular",
+    "node.js",
+    "blog-template"
   ],
   "author": "Tanner Dolby",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tannerdolby/angular-node-blog-template"
+  },
+  "homepage": "https://github.com/tannerdolby/angular-node-blog-template#angular-node-blog-template",
+  "bugs": {
+    "email": "tannercdolby@gmail.com",
+    "url": "https://github.com/tannerdolby/angular-node-blog-template/issues"
+  },
   "license": "MIT"
 }
