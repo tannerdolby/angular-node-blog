@@ -13,10 +13,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "cd ./blog-client && npm install && npm run build:prod",
+    "build": "cd ./blog-client && npm install && npm run build:prod && cd ../ && netlify-lambda build server",
     "start": "node ./src/app.js",
     "dev": "nodemon ./src/app.js",
-    "serve": "netlify-lambda serve src"
+    "serve": "netlify-lambda serve src",
+    "b": "cd ./node-app && netlify-lambda build src/server"
   },
   "keywords": [
     "netlify",

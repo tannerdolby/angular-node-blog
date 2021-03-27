@@ -18,9 +18,9 @@ app.use(bodyParser.json());
 // specify the mount path for the static directory `/dist`
 app.use("/", express.static("dist"));
 
-const postRouter = require("./routes/post");
-const postsRouter = require("./routes/posts");
-const getPostByTagRouter = require("./routes/get-post-by-tag");
+const postRouter = require("../node-app/src/routes/post");
+const postsRouter = require("../node-app/src/routes/posts");
+const getPostByTagRouter = require("../node-app/src/routes/get-post-by-tag");
 
 // use express routes
 app.use("/", postRouter);
@@ -39,5 +39,8 @@ router.get("/test", (req, res) => {
 // Netlify Lambda functions (future work)
 app.use("/.netlify/functions/app", router);
 
-module.exports = app;
+app.listen(port, () => {
+    console.log(`App running on port ${port}`);
+});
+
 module.exports.handler = serverless(app);
