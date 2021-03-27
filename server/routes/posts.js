@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
-const assetsDir = "./node-app/dist/assets";
+const assetsDir = "./dist/assets";
 const slugify = require("../_helpers/slugify");
 
 router.get("/recent", (req, res) => {
