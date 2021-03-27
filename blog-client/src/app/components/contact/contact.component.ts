@@ -9,7 +9,7 @@ import * as siteData from '../../../assets/site.json';
 })
 export class ContactComponent implements OnInit {
 
-  contactForm!: FormGroup;
+  contactForm: any;
   contact: any;
   cName: any;
   cEmail: any;
@@ -33,7 +33,13 @@ export class ContactComponent implements OnInit {
     // update `myEmail` in site.json with your current email
     window.location.href = `mailto:${this.myEmail}?body=${this.contactForm.value.message}`;
     this.contactForm.reset();
-    console.log(this.contactForm.get("name"));
+    this.contactForm.markAsPristine();
+    let controls = this.contactForm.controls;
+    for (const control in controls) {
+      if (this.contactForm.controls[control].errors !== null) {
+        this.contactForm.controls[control].setErrors(null);
+      }
+    }
   }
 
   get name() {

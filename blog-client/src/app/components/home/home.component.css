@@ -1,9 +1,13 @@
 header {
-    padding: 4rem 1rem;
-    background: #1b1c1d;
+    padding: 4.5rem 1rem;
+    background: #ececec;
     text-align: center;
     margin: 0 auto;
-    color: #fff;
+    border-bottom: .1rem solid lightgray;
+}
+
+header h1 {
+    font-size: 2rem;
 }
 
 .bg {
@@ -13,7 +17,11 @@ header {
 .wrapper {
     max-width: 80ch;
     padding: 1.5rem 1rem 4rem 1rem;
-    margin: 0 auto;
+    margin: 1.5rem auto;
+}
+
+section {
+    margin: 2rem auto;
 }
 
 section h2 {
@@ -55,11 +63,15 @@ article h3 a:hover {
 }
 
 .tag {
-    margin: 0 .25rem;
+    margin: 0 .2rem;
     text-decoration: none;
     color: var(--link-accessible);
 }
 
 .tag:hover {
     text-decoration: underline;
+}
+
+mat-card {
+    margin: 2rem auto;
 }

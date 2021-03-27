@@ -2,23 +2,23 @@
     <section>
         <h1>Contact</h1>
         <p>Feel free to send me a message if you would like to discuss a project or opportunity. I'm also available through Twitter, if that's more your style.</p>
-        <form [formGroup]="contactForm" (ngSubmit)="submit()">
-            <label for="name">Your Name</label>
-            <input type="text" formControlName="name" name="name" id="name" placeholder="Enter name...">
-            <div class="form-error" *ngIf="cName.invalid && (cName.dirty || cName.touched)">
-                <p *ngIf="cName.errors.required">Name is required.</p>
-            </div>
-            <label for="email">Your Email</label>
-            <input type="email" formControlName="email" name="email" id="email" placeholder="Enter email...">
-            <div class="form-error" *ngIf="cEmail.invalid && (cEmail.dirty || cEmail.touched)">
-                <p *ngIf="cEmail.errors.required">Email is required.</p>
-                <p *ngIf="cEmail.errors.email">Invalid email format.</p>
-            </div>
-            <label for="message">Your Message</label>
-            <textarea name="message" formControlName="message" id="message" placeholder="Enter message..."></textarea>
-            <div class="form-error" *ngIf="cMessage.invalid && (cMessage.dirty || cMessage.touched)">
-                <p *ngIf="cMessage.errors.required">Message is required.</p>
-            </div>
+        <form [formGroup]="contactForm" (ngSubmit)="submit()" class="contact-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput formControlName="name" placeholder="Enter name">
+                <mat-error *ngIf="cName.invalid">Name is required.</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="text" matInput formControlName="email" placeholder="Enter email">
+                <mat-error *ngIf="!contactForm.submitted && cEmail.invalid && cEmail.errors?.required == true">Email is required.</mat-error>
+                <mat-error *ngIf="!contactForm.submitted && cEmail.errors?.email == true">Invalid email format.</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Message</mat-label>
+                <textarea matInput name="message" id="message" formControlName="message" placeholder="Enter message"></textarea>
+                <mat-error *ngIf="cMessage.invalid">Message is required.</mat-error>
+            </mat-form-field>
             <div class="submit">
                 <button title="Please fill in all form fields." *ngIf="contactForm.status === 'INVALID'" disabled type="submit">Submit</button>
                 <button *ngIf="contactForm.status === 'VALID'" type="submit">Submit</button>
@@ -26,4 +26,3 @@
         </form>
     </section>
 </div>
-

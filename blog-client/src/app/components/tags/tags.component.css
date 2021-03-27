@@ -1,7 +1,15 @@
 .wrapper {
     max-width: 80ch;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     padding: 1rem;
+}
+
+section {
+    margin: 2rem auto;
+}
+
+.wrapper h1 {
+    font-size: 2.5rem;
 }
 
 article {
@@ -44,10 +52,14 @@ article h2 a:hover {
     border: .1rem solid transparent;
 }
 
-.date .tag {
-    margin: 0 .25rem;
+section .date .tag {
+    margin: 0 .2rem;
 }
 
-.date .tag:first-of-type {
+section .date .tag:first-of-type {
     margin-left: .1rem;
+}
+
+mat-card {
+    margin: 2rem auto;
 }

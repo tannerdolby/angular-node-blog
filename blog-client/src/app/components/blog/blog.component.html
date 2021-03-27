@@ -1,10 +1,10 @@
 <div class="wrapper">
     <h1>Blog</h1>
     <section>
-        <article *ngFor="let article of articles">
-            <h2 class="title"><a routerLink="/blog/{{ article.slug }}">{{ article.title }}</a></h2>
-            <p class="date">Published on <time>{{ article.date | date }}</time> &bull; tagged with <a *ngFor="let tag of article.tags" routerLink="/blog/category/{{ tag }}">#{{ tag }}</a></p>
-            <p class="preview">{{ article.preview}}</p>
-        </article>
+        <mat-card *ngFor="let article of articles" role="group">
+            <mat-card-title><a routerLink="/blog/{{ article.slug }}">{{ article.title }}</a></mat-card-title>
+            <mat-card-subtitle class="date">Published on <time>{{ article.date | date }}</time> &bull; tagged with <a class="tag" *ngFor="let tag of article.tags" routerLink="/blog/category/{{ tag }}">#{{ tag }}</a></mat-card-subtitle>
+            <mat-card-content>{{ article.preview }}</mat-card-content>
+        </mat-card>
     </section>
 </div>

@@ -47,10 +47,8 @@ export class PostComponent implements OnInit {
   nextPost(posts: any) {
     let index = this.pos;
     let p = index + 1 >= posts.length ? posts[0] : posts[index + 1];
-
     this.postService.getPost(p.slug).subscribe(response => {
       this.postData = response;
-      console.log(posts.length);
       if (this.pos >= posts.length - 1) {
         this.pos = 0;
       } else {
@@ -63,7 +61,6 @@ export class PostComponent implements OnInit {
   prevPost(posts: any) {
     let index = this.pos;
     let p = index - 1 < 0 ? posts[posts.length - 1] : posts[index - 1];
-
     this.postService.getPost(p.slug).subscribe(response => {
       this.postData = response;
       if (this.pos <= 0) {
@@ -71,7 +68,6 @@ export class PostComponent implements OnInit {
       } else {
       this.pos -= 1;
       }
-      console.log(this.pos);
     });
   }
 

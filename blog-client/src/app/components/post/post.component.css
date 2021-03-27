@@ -1,7 +1,7 @@
 .wrapper {
     margin: 2rem auto 3rem auto;
     padding: 1rem;
-    max-width: 75ch;
+    max-width: 80ch;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@ article img {
 }
 
 .tag {
-    margin: 0 .25rem;
+    margin: 0 .2rem;
     text-decoration: none;
     color: var(--link-accessible);
 }
@@ -49,14 +49,14 @@ article img {
 }
 
 .nav-posts button {
-    border: .1rem solid #444;
+    border: .1rem solid #282d33;
     padding: .5rem 1rem;
     background-color: inherit;
 }
 
 .nav-posts button:hover {
     cursor: pointer;
-    background-color: #444;
+    background-color: #282d33;
     color: #fff;
     border: .1rem solid transparent;
 }

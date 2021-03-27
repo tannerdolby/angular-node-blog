@@ -10,11 +10,15 @@
     --btn-danger: #ff3547;
 }
 
+html, body { 
+    height: 100%; 
+}
+
 body {
-    font-size: 1rem;
-    font-family: "Noto Serif", sans-serif;
-    font-family: "Helvetica Neue", sans-serif;
-    line-height: 1.7;
+    font-size: 1rem !important;
+    font-family: "Noto Serif", sans-serif !important;
+    /* font-family: "Helvetica Neue", sans-serif; */
+    line-height: 1.7 !important;
     margin: 0 auto;
     padding: 0;
     background-color: #fff;
@@ -54,6 +58,11 @@ a:hover {
     cursor: pointer;
 }
 
+p {
+    font-family: "Noto Serif", sans-serif !important;
+    font-size: 1rem !important;
+}
+
 app-root {
     display: flex;
     flex-direction: column;
@@ -62,4 +71,16 @@ app-root {
 
 app-footer {
     margin-top: auto;
+}
+
+.mat-card-content {
+    font-size: 1rem;
+}
+
+mat-form-field .mat-form-field-outline {
+    background-color: #fff;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #2540AD;
 }

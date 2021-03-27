@@ -1,6 +1,6 @@
 .wrapper {
     max-width: 75ch;
-    margin: 1rem auto;
+    margin: 2rem auto;
     padding: 1rem;
     background-color: rgb(246, 246, 246);
 }
@@ -36,19 +36,18 @@ section article a {
     color: var(--link-accessible);
 }
 
-section article .date {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-}
-
-section article .date a:first-of-type {
+section .date .tag:first-of-type {
     margin-left: .1rem;
 }
 
-section article .date a {
-    margin: 0 .25rem;
+section .date .tag {
+    margin: 0 .2rem;
 }
 
-section article .preview {
+section .preview {
     margin: 0;
+}
+
+mat-card {
+    margin: 2rem auto;
 }
