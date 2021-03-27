@@ -1,7 +1,7 @@
 [build]
     command = "npm run build"
-    functions = "functions/blog-client"
-    publish = "dist"
+    functions = "functions"
+    publish = "dist/blog-client"
 
  [[redirects]]
     from = "/*"
