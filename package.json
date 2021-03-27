@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "cd blog-client && npm install && ng build --prod && cd ../ && netlify-lambda build blog-client/src",
+    "build": "cd ./blog-client && npm install && ng build --prod && cd ../ && netlify-lambda build blog-client/src",
     "start": "node ./src/app.js",
     "dev": "nodemon ./src/app.js",
     "serve": "netlify-lambda serve src"
