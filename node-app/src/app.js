@@ -39,8 +39,5 @@ router.get("/test", (req, res) => {
 // Netlify Lambda functions (future work)
 app.use("/.netlify/functions/app", router);
 
-app.listen(port, () => {
-    console.log(`App running on port ${port}`);
-});
-
+module.exports = app;
 module.exports.handler = serverless(app);

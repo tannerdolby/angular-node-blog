@@ -2,7 +2,7 @@
   "name": "angular-node-blog-template",
   "version": "1.0.0",
   "description": "Node.js + Angular blog template prepared for Netlify.",
-  "main": "server.js",
+  "main": "functions/server.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -13,11 +13,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "cd blog-client && npm install && ng build --prod",
+    "build": "cd blog-client && npm install && ng build --prod && cd ../ && netlify-lambda build blog-client/src",
     "start": "node ./src/app.js",
     "dev": "nodemon ./src/app.js",
-    "serve": "netlify-lambda serve src",
-    "start-l": "netlify-lambda build src"
+    "serve": "netlify-lambda serve src"
   },
   "keywords": [
     "netlify",
