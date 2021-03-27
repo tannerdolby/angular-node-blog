@@ -6,7 +6,7 @@ To get the project running locally on your machine:
 1. Fork this repository
 2. Clone `git clone git@github.com:tannerdolby/angular-node-blog-template.git`
 3. Install dependencies `npm install` (in both `blog-client` and `node-app` directories)
-4. Serve locally `npm run dev` in `node-app` (you can also optionally run the angular client with `ng serve`)
+4. Serve locally `npm run dev` in `node-app` (you can also optionally run the Angular `blog-client` with `ng serve`)
 
 ## Features
 - Home page with recent posts
