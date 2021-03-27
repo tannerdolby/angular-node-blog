@@ -1,6 +1,15 @@
 nav {
     padding: .25rem 1rem;
-    background: #202429;
+    /* background: #202429; */
+}
+
+.home {
+    background: inherit;
+}
+
+.home ul li a,
+.home div a {
+    color: #222;
 }
 
 .wrapper {
@@ -22,7 +31,6 @@ nav ul li a {
     padding: 1rem;
     margin: 0 .25rem;
     color: #222;
-    color: #fff;
     text-decoration: none;
     border-radius: .1rem;
 }
@@ -34,7 +42,6 @@ nav ul li a:hover {
 
 .logo a {
     color: #222;
-    color: #fff;
     text-decoration: none;
     padding: .5rem 0;
 }

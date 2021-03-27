@@ -2,7 +2,7 @@
   "name": "angular-node-blog-template",
   "version": "1.0.0",
   "description": "Node.js + Angular blog template prepared for Netlify.",
-  "main": "functions/server.js",
+  "main": "functions/app.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -14,16 +14,17 @@
   "devDependencies": {},
   "scripts": {
     "build": "cd ./blog-client && npm install && npm run build:prod && cd ../ && netlify-lambda build server",
-    "start": "node ./src/app.js",
-    "dev": "nodemon ./src/app.js",
-    "serve": "netlify-lambda serve src",
-    "b": "cd ./node-app && netlify-lambda build src/server"
+    "start": "node ./server/app.js",
+    "dev": "nodemon ./server/app.js",
+    "serve": "netlify-lambda serve server",
+    "build-lambda": "netlify-lambda build server"
   },
   "keywords": [
     "netlify",
     "angular",
     "node.js",
-    "blog-template"
+    "blog-template",
+    "lambda-functions"
   ],
   "author": "Tanner Dolby",
   "repository": {

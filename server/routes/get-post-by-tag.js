@@ -1,13 +1,13 @@
 const express = require("express");
 const fs = require("fs");
 const router = express.Router();
-const assetsDir = __dirname.slice(0, 46) + "blog-client/src/assets";
+const assetsDir = "./node-app/dist/assets";
 
 router.get("/blog/category/:tag", (req, res) => {
     const { params } = req;
     const tag = params.tag;
     let postData;
-    fs.readFile(`${assetsDir}/blog.json`, "utf8", (err, data) => {
+    fs.readFile(`./node-app/dist/assets/blog.json`, "utf8", (err, data) => {
         if (err) {
             console.log(err);
         }
@@ -15,7 +15,7 @@ router.get("/blog/category/:tag", (req, res) => {
             return p.tags.includes(`${tag}`);
         });
         if (postData.length != 0) {
-            res.json(postData);
+            res.status(200).json(postData);
         } else {
             res.json({ status: "FAILED", message: `Unable to find posts with tag: ${tag}` });
         }

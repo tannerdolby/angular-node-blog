@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
-const assetsDir = __dirname.slice(0, 46) + "blog-client/src/assets";
+const assetsDir = "./node-app/dist/assets";
 const slugify = require("../_helpers/slugify");
 
 router.get("/recent", (req, res) => {
@@ -16,7 +16,7 @@ router.get("/recent", (req, res) => {
             f.date = Date.parse(f.date);
         })
         const recent = metadata.sort((a, b) => a.date - b.date).slice(0, 3);
-        res.json(recent);
+        res.status(200).json(recent);
     });
 });
 
@@ -26,7 +26,7 @@ router.get("/blog", (req, res) => {
             console.log(err);
         }
         metadata = data;
-        res.json(JSON.parse(data));
+        res.status(200).json(JSON.parse(data));
     });
 });
 

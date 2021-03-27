@@ -3,7 +3,7 @@ const router = express.Router();
 const fs = require("fs");
 // if you change the project structure make sure to update `dir` and `assetsDir`
 const dir = __dirname.slice(0, 46) + "blog-client/src/app/pages";
-const assetsDir = __dirname.slice(0, 46) + "blog-client/src/assets";
+const assetsDir = "./node-app/dist/assets";
 const fileReader = require("../_helpers/file-reader");
 const slugify = require("../_helpers/slugify");
 
@@ -51,7 +51,7 @@ router.get("/blog/:post", (req, res) => {
                             const postMetaData = metadata.filter(f => {
                                 return slugify(f.title) == post[0].slug;
                             });
-                            res.json({ post: post[0], metadata: postMetaData[0] });
+                            res.status(200).json({ post: post[0], metadata: postMetaData[0] });
                         } else {
                             res.json({ status: "FAILED", message: "That post slug doesn't exist." });
                         }
