@@ -46,6 +46,15 @@ router.get("/test", (req, res) => {
     res.status(200).json({ message: "Test complete" });
 });
 
+router.get("/blah", (req, res) => {
+    fs.readFile("./dist/blog-client/assets/blog.json", (err, data) => {
+        if (err) {
+            res.status(400).json({ error: err, msg: "FAILED" });
+        }
+        res.status(200).json(JSON.parse(data));
+    });
+})
+
 // Netlify Lambda function route
 app.use("/.netlify/functions/app", function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
