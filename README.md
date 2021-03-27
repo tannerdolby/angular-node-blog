@@ -1,5 +1,5 @@
 # angular-node-blog-template
-A starter site for creating your own blog with Angular and Node.js.
+A starter site for creating your own blog with Angular and Node.js. Angular Material was used for UI components and Express.js as the Node framework.
 
 ## Getting Started
 To get the project running locally on your machine:
