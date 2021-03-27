@@ -1,6 +1,6 @@
 nav {
-    padding: .25rem 1rem;
-    /* background: #202429; */
+    padding: .2rem 1rem;
+    background: #202429;
 }
 
 .home {
@@ -10,6 +10,7 @@ nav {
 .home ul li a,
 .home div a {
     color: #222;
+    color: #fff;
 }
 
 .wrapper {
@@ -31,6 +32,7 @@ nav ul li a {
     padding: 1rem;
     margin: 0 .25rem;
     color: #222;
+    color: #fff;
     text-decoration: none;
     border-radius: .1rem;
 }
@@ -42,6 +44,7 @@ nav ul li a:hover {
 
 .logo a {
     color: #222;
+    color: #fff;
     text-decoration: none;
     padding: .5rem 0;
 }
@@ -61,7 +64,11 @@ nav ul li a:hover {
         align-items: flex-start;
     }
     .logo {
-        margin: 1rem;
+        margin: 1rem 0;
+    }
+
+    nav .wrapper ul li:first-child a:first-of-type {
+        padding-left: 0;
     }
 
     header h1 {

@@ -25,7 +25,7 @@
         "title": "Learn the basics of Node.js",
         "date": "3/25/2021",
         "tags": [
-            "node.js",
+            "nodejs",
             "javascript"
         ],
         "template": "learn-node-js.html",

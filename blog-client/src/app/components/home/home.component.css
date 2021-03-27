@@ -1,10 +1,23 @@
 header {
-    padding: 5rem 1rem;
-    /* background: #ececec; */
-    background: #202429;
+    padding: 4.5rem 1rem;
+    background: #ececec;
+    background: #e9e8e8;
+    background: #ecebeb;
+    background: #bee2c4;
+    background: #162f33;
+    /* background: #2b6447; */
+    /* background-color: #0ca4aa; */
+    /* background-color: #5f8aa1; */
+    /* background-color: #021d17; */
+    /* background: #404d2f;
+    background: #151c5f;
+    background: #1c3358;
+    background: #bce5f5;
+    background: #084155; */
+    color: #fff;
+    /* background: #202429; */
     text-align: center;
     margin: 0 auto;
-    color: #fff;
 }
 
 header h1 {
@@ -18,7 +31,7 @@ header h1 {
 .wrapper {
     max-width: 80ch;
     padding: 1.5rem 1rem 4rem 1rem;
-    margin: 1.5rem auto;
+    margin: 1rem auto;
 }
 
 section {
