@@ -8,14 +8,18 @@ const serverless = require("serverless-http");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const assetsDir = "./node-app/dist/assets";
-
 const slugify = require("./_helpers/slugify");
 
 var corsOptions = {
     origin: "http://localhost:4200"
 }
 
-app.use(cors(corsOptions));
+app.use(cors({
+    optionsSuccessStatus: 200,
+    origin: "http://localhost:8888"
+}));
+app.options("*", cors());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -30,11 +34,6 @@ const getPostByTagRouter = require("./routes/get-post-by-tag");
 app.use("/.netlify/functions/app", postRouter);
 app.use("/.netlify/functions/app", postsRouter);
 app.use("/.netlify/functions/app", getPostByTagRouter);
-
-router.get("/el", (req, res) => {
-    console.log(path.join(__dirname, "../dist", "index.html"));
-    res.sendFile("index.html", { root: "./dist" });
-});
 
 router.get("/test", (req, res) => {
     res.status(200).json({ message: "Test complete" });

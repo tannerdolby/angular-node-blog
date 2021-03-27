@@ -10,9 +10,8 @@ const slugify = require("../_helpers/slugify");
 router.get("/blog/:post", (req, res) => {
     const { params } = req;
     const postSlug = params.post;
-    console.log(postSlug);
 
-    fs.readdir("blog-client/src/app/pages", "utf8", (err, files) => {
+    fs.readdir("./dist/blog-client/app/pages", "utf8", (err, files) => {
         if (err) {
             console.error(err);
         }
@@ -26,12 +25,10 @@ router.get("/blog/:post", (req, res) => {
                 }
                 fileArr.push(fileObj);
             });
-
-            console.log(fileArr);
             if (fileArr.length === 0) {
                 res.status(400).json({ status: "FAILED", message: "Unable to read filse." });
             } else {
-                fs.readFile(`${assetsDir}/blog.json`, "utf8", (err, data) => {
+                fs.readFile(`./dist/blog-client/assets/blog.json`, "utf8", (err, data) => {
                     if (err) {
                         console.log(err);
                     }
