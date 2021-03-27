@@ -9,16 +9,24 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const assetsDir = "./node-app/dist/assets";
 const slugify = require("./_helpers/slugify");
+// const env = require("/blog-client/app/src/environments/environment");
 
 var corsOptions = {
     origin: "http://localhost:4200"
 }
 
-app.use(cors({
-    optionsSuccessStatus: 200,
-    origin: "http://localhost:8888"
-}));
-app.options("*", cors());
+// console.log(env);
+console.log(process.env.NODE_ENV);
+console.log(process.env);
+
+if (process.env.NODE_ENV == 'production') {
+    app.use(cors({
+        optionsSuccessStatus: 200,
+        // (DEV) origin: `http://localhost:8888`
+        origin: "https://modest-bhabha-3a9de8.netlify.app"
+    }));
+    app.options("*", cors());
+}
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
