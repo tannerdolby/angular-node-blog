@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
-const assetsDir = "./dist/assets";
+const assetsDir = "./dist/blog-client/assets";
 const slugify = require("../_helpers/slugify");
 
 router.get("/recent", (req, res) => {
@@ -11,6 +11,7 @@ router.get("/recent", (req, res) => {
             console.log(err);
         }
         metadata = JSON.parse(data);
+        console.log(metadata);
         metadata.forEach(f => {
             f.slug = slugify(f.title);
             f.date = Date.parse(f.date);
