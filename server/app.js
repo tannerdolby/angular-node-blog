@@ -19,14 +19,13 @@ var corsOptions = {
 console.log(process.env.NODE_ENV);
 console.log(process.env);
 
-if (process.env.NODE_ENV == 'production') {
-    app.use(cors({
-        optionsSuccessStatus: 200,
-        // (DEV) origin: `http://localhost:8888`
-        origin: "https://modest-bhabha-3a9de8.netlify.app"
-    }));
-    app.options("*", cors());
-}
+
+app.use(cors({
+    optionsSuccessStatus: 200,
+    origin: "http://localhost:9000"
+    // origin: "https://modest-bhabha-3a9de8.netlify.app"
+}));
+app.options("*", cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -48,12 +47,11 @@ router.get("/test", (req, res) => {
 });
 
 // Netlify Lambda function route
-app.use("/.netlify/functions/app", router);
-
-app.listen(port, () => {
-    console.log(`App running on port ${port}`);
-});
+app.use("/.netlify/functions/app", function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+}, router);
 
 module.export = app;
-
 module.exports.handler = serverless(app);

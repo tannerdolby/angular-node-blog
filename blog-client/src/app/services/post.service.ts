@@ -24,7 +24,7 @@ export class PostService {
   }
 
   getRecentPosts() {
-    return this.http.get(`${this.recentLambdaUrl}`);
+    return this.http.get(`https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/app/recent`);
   }
 
   getPostsByTag(tag: string) {
