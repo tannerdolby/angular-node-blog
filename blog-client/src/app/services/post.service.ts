@@ -15,6 +15,7 @@ export class PostService {
   postLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog";
   allPostsLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog";
   postsByTagLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog/category";
+  recentPosts: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/app/recent";
 
 
   constructor(private http: HttpClient) { }
@@ -24,7 +25,7 @@ export class PostService {
   }
 
   getRecentPosts() {
-    return this.http.get(`https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/app/recent`);
+    return this.http.get(`${this.recentLambdaUrl}`);
   }
 
   getPostsByTag(tag: string) {

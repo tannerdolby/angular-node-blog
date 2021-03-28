@@ -15,11 +15,6 @@ var corsOptions = {
     origin: "http://localhost:4200"
 }
 
-// console.log(env);
-console.log(process.env.NODE_ENV);
-console.log(process.env);
-
-
 app.use(cors({
     optionsSuccessStatus: 200,
     origin: "http://localhost:9000"
@@ -33,9 +28,9 @@ app.use(bodyParser.json());
 // specify the mount path for the static directory `/dist`
 app.use("/", express.static("dist"));
 
-const postRouter = require("./routes/post");
-const postsRouter = require("./routes/posts");
-const getPostByTagRouter = require("./routes/get-post-by-tag");
+const postRouter = require("../routes/post");
+const postsRouter = require("../routes/posts");
+const getPostByTagRouter = require("../routes/get-post-by-tag");
 
 // Set Netlify function routes
 app.use("/.netlify/functions/app", postRouter);
@@ -45,6 +40,12 @@ app.use("/.netlify/functions/app", getPostByTagRouter);
 router.get("/test", (req, res) => {
     res.status(200).json({ message: "Test complete" });
 });
+
+// function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// },
 
 router.get("/blah", (req, res) => {
     fs.readFile("./dist/blog-client/assets/blog.json", (err, data) => {
@@ -56,11 +57,7 @@ router.get("/blah", (req, res) => {
 })
 
 // Netlify Lambda function route
-app.use("/.netlify/functions/app", function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-}, router);
+app.use("/.netlify/functions/app", router);
 
 module.export = app;
 module.exports.handler = serverless(app);

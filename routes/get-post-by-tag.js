@@ -4,6 +4,7 @@ const router = express.Router();
 const assetsDir = "./node-app/dist/assets";
 
 router.get("/blog/category/:tag", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     const { params } = req;
     const tag = params.tag;
     let postData;

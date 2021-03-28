@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const assetsDir = "./dist/blog-client/assets";
-const slugify = require("../_helpers/slugify");
+const slugify = require("../server/_helpers/slugify");
 
 router.get("/recent", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     let metadata;
     fs.readFile(`${assetsDir}/blog.json`, "utf8", (err, data) => {
         if (err) {
@@ -22,6 +23,7 @@ router.get("/recent", (req, res) => {
 });
 
 router.get("/blog", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     fs.readFile(`${assetsDir}/blog.json`, "utf8", (err, data) => {
         if (err) {
             console.log(err);
