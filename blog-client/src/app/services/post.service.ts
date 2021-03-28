@@ -7,16 +7,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostService {
 
+  // Node/Express local endpoints
   postsUrl: string = "http://localhost:4000/blog";
   recentPostsUrl: string = "http://localhost:4000/recent";
   postsByTagUrl: string = "http://localhost:4000/blog/category";
+  
   // Netlify Lambda function endpoints
   recentLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/recent";
   postLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog";
   allPostsLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog";
   postsByTagLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog/category";
   recentPosts: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/app/recent";
-
 
   constructor(private http: HttpClient) { }
 

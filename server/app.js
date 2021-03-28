@@ -45,9 +45,11 @@ router.get("/test", (req, res) => {
 router.get("/blah", (req, res) => {
     fs.readFile("./dist/blog-client/assets/blog.json", (err, data) => {
         if (err) {
-            res.status(400).json({ error: err, msg: "FAILED" });
+            console.log(err);
+            //res.status(400).json({ error: err, msg: "FAILED" });
         }
-        res.status(200).json(JSON.parse(data));
+        console.log(JSON.parse(data));
+        res.status(200).json({ ya: JSON.parse(data) });
     });
 })
 
