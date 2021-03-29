@@ -56,9 +56,11 @@ router.get("/blah", (req, res) => {
     });
 })
 
+// Local Dev
+//app.use("/", router);
+
 // Netlify Lambda function route
-// app.use("/.netlify/functions/app", router);
-app.use("/", router);
+app.use("/.netlify/functions/app", router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
