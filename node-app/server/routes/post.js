@@ -4,8 +4,8 @@ const fs = require("fs");
 // if you change the project structure make sure to update `dir` and `assetsDir`
 const dir = __dirname.slice(0, 46) + "blog-client/src/app/pages";
 const assetsDir = "./node-app/dist/assets";
-const fileReader = require("./_helpers/file-reader");
-const slugify = require("./_helpers/slugify");
+const fileReader = require("../_helpers/file-reader");
+const slugify = require("../_helpers/slugify");
 
 router.get("/blog/:post", (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");

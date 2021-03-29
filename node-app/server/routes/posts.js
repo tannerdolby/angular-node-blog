@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const assetsDir = "./dist/blog-client/assets";
-const slugify = require("./_helpers/slugify");
+const slugify = require("../_helpers/slugify");
 
 router.get("/recent", (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
