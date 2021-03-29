@@ -1,4 +1,4 @@
-const fetch = require("node-fetch").default;
+global.fetch = require("node-fetch").default;
 const dir = "./functions";
 const file = "./blog.json";
 //const resolved = process.env.LAMBDA_TASK_ROOT ? path.resolve(process.env.LAMBDA_TASK_ROOT, file) : path.resolve(__dirname, file);
