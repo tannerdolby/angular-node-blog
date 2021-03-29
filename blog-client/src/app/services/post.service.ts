@@ -26,7 +26,7 @@ export class PostService {
     return this.http.get(`${this.postLambdaUrl}/${slug}`);
   }
 
-  getRecentPosts() {
+  getAllPosts() {
     return this.http.get(`${this.postsMetadata}`, { 
       headers: { 
         'Access-Control-Allow-Origin': '*',
@@ -38,10 +38,6 @@ export class PostService {
 
   getPostsByTag(tag: string) {
     return this.http.get(`${this.postsByTagLambdaUrl}/${tag}`);
-  }
-
-  getAllPosts() {
-    return this.http.get(`${this.allPostsLambdaUrl}`);
   }
 
   slugify(str: string) {

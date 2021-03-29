@@ -14,13 +14,13 @@ export class HomeComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    this.postService.getRecentPosts().subscribe((response: any) => {
+    this.postService.getAllPosts().subscribe((response: any) => {
       response.forEach((r: any) => {
         r.date = new Date(r.date);
         this.tags = r.tags;
       });
       console.log(response);
-      this.recent = response;
+      this.recent = response.sort((a: any, b: any) => a.date - b.date);
     });
   }
 }
