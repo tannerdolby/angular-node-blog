@@ -14,10 +14,6 @@ exports.handler = async (event, context) => {
                 statusCode: 200,
                 body: JSON.stringify(ut8.decode(base64.decode(json.content)))
         }))
-        // .then(json => ({
-        //     statusCode: 200,
-        //     body: JSON.stringify(json)
-        // }))
         .catch(error => ({
             statusCode: 500,
             body: error
