@@ -4,6 +4,6 @@ const path = require("path");
 exports.handler = async (event, context) => {
     return {
         statusCode: 200,
-        body: { msg: "Hello World!" }
+        body: JSON.stringify({ msg: "Hello World!" })
     };
 };
