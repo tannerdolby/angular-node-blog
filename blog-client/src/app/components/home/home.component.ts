@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
         r.date = new Date(r.date);
         this.tags = r.tags;
       });
+      console.log(response);
       this.recent = response;
     });
   }
