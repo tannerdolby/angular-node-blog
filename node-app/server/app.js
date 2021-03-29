@@ -7,6 +7,7 @@ const port = process.env.PORT || 4000;
 const serverless = require("serverless-http");
 const bodyParser = require("body-parser");
 const fs = require("fs");
+const fetch = require("node-fetch");
 const assetsDir = "./node-app/dist/assets";
 const slugify = require("./_helpers/slugify");
 // const env = require("/blog-client/app/src/environments/environment");
@@ -23,24 +24,26 @@ app.use(bodyParser.json());
 // specify the mount path for the static directory `/dist`
 app.use("/", express.static("dist"));
 
-const postRouter = require("./post");
-const postsRouter = require("./posts");
-const getPostByTagRouter = require("./get-post-by-tag");
+const postRouter = require("./routes/post");
+const postsRouter = require("./routes/posts");
+const getPostByTagRouter = require("./routes/get-post-by-tag");
 
 // Set Netlify function routes
 app.use("/.netlify/functions/app", postRouter);
 app.use("/.netlify/functions/app", postsRouter);
 app.use("/.netlify/functions/app", getPostByTagRouter);
 
-router.get("/test", (req, res) => {
-    res.status(200).json({ message: "Test complete" });
+router.get("/test", async (req, res) => {
+    fetch("https://api.github.com/repos/tannerdolby/angular-node-blog-template/contents/dist/blog-client/pages")
+        .then(data => data.json())
+        .then(json => {
+            let f = json.forEach(f => {
+                console.log(f.name);
+            });
+            return res.status(200).json(json)
+        })
+        .catch(err => console.log(err));
 });
-
-// function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-// },
 
 router.get("/blah", (req, res) => {
     fs.readFile("./dist/blog-client/assets/blog.json", (err, data) => {
@@ -54,7 +57,8 @@ router.get("/blah", (req, res) => {
 })
 
 // Netlify Lambda function route
-app.use("/.netlify/functions/app", router);
+// app.use("/.netlify/functions/app", router);
+app.use("/", router);
 
-module.export = app;
+module.exports = app;
 module.exports.handler = serverless(app);

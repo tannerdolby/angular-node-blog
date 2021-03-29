@@ -8,16 +8,17 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "netlify-lambda": "^2.0.3",
+    "node-fetch": "^2.6.1",
     "nodemon": "^2.0.7",
     "serverless-http": "^2.7.0"
   },
   "devDependencies": {},
   "scripts": {
-    "build": "cd ./blog-client && npm install && npm run build:prod && cd ../ && netlify-lambda build functions",
+    "build": "cd ./blog-client && npm install && npm run build:prod && cd ../ && netlify-lambda build lambda",
     "start": "node ./local-server.js",
     "dev": "nodemon ./local-server.js",
-    "serve": "netlify-lambda serve functions",
-    "build-lambda": "netlify-lambda build functions"
+    "serve": "netlify-lambda serve lambda",
+    "build-lambda": "netlify-lambda build lambda"
   },
   "keywords": [
     "netlify",
