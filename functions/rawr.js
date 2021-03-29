@@ -9,7 +9,7 @@ exports.handler = async (event, context) => {
         const f = await fsp.readFile(`${dir}${resolved}`, "utf8");
         return {
             statusCode: 200,
-            body: JSON.stringify(f)
+            body: JSON.stringify({ data: f })
         };
     } catch (e) {
         return {
