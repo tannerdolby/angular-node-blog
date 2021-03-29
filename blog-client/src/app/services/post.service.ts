@@ -17,7 +17,8 @@ export class PostService {
   postLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog";
   allPostsLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog";
   postsByTagLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog/category";
-  recentPosts: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/rawr";
+  blogPostFiles: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/rawr";
+  postsMetadata: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/test";
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +27,7 @@ export class PostService {
   }
 
   getRecentPosts() {
-    return this.http.get(`${this.recentPosts}`, { 
+    return this.http.get(`${this.postsMetadata}`, { 
       headers: { 
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',

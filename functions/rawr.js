@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 const endpoint = "https://api.github.com/repos/tannerdolby/angular-node-blog-template/contents/dist/blog-client/pages";
 
 exports.handler = async (event, context) => {
-    // Fetch directory of page files from GitHub API
+    // Fetch directory of blog post files from GitHub API
     return fetch(endpoint, { headers: { 
         'Accept': "application/json",
         'Access-Control-Allow-Origin': '*',
