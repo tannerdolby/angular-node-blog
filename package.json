@@ -14,11 +14,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "cd ./blog-client && npm install && npm run build:prod && cd ../ && netlify-lambda build functions",
+    "build": "cd ./blog-client && npm install && npm run build:prod && cd ../functions && npm install && cd ../ netlify-lambda build ./node-app/server",
     "start": "node ./local-server.js",
     "dev": "nodemon ./local-server.js",
-    "serve": "netlify-lambda serve functions",
-    "build-lambda": "netlify-lambda build functions"
+    "serve": "netlify-lambda serve ./node-app/server",
+    "build-lambda": "netlify-lambda build ./node-app/server"
   },
   "keywords": [
     "netlify",

@@ -7,7 +7,6 @@ const port = process.env.PORT || 4000;
 const serverless = require("serverless-http");
 const bodyParser = require("body-parser");
 const fs = require("fs");
-const fetch = require("node-fetch");
 const assetsDir = "./node-app/dist/assets";
 const slugify = require("./_helpers/slugify");
 // const env = require("/blog-client/app/src/environments/environment");
@@ -34,15 +33,7 @@ app.use("/.netlify/functions/app", postsRouter);
 app.use("/.netlify/functions/app", getPostByTagRouter);
 
 router.get("/test", async (req, res) => {
-    fetch("https://api.github.com/repos/tannerdolby/angular-node-blog-template/contents/dist/blog-client/pages")
-        .then(data => data.json())
-        .then(json => {
-            let f = json.forEach(f => {
-                console.log(f.name);
-            });
-            return res.status(200).json(json)
-        })
-        .catch(err => console.log(err));
+    res.json({ hey: "you" });
 });
 
 router.get("/blah", (req, res) => {

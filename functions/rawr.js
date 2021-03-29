@@ -1,6 +1,4 @@
-const fetch = require("node-fetch").default;
-const dir = "./functions";
-const file = "./blog.json";
+const fetch = require("node-fetch");
 //const resolved = process.env.LAMBDA_TASK_ROOT ? path.resolve(process.env.LAMBDA_TASK_ROOT, file) : path.resolve(__dirname, file);
 const endpoint = "https://api.github.com/repos/tannerdolby/angular-node-blog-template/contents/dist/blog-client/pages";
 
