@@ -7,9 +7,10 @@ const resolved = process.env.LAMBDA_TASK_ROOT ? path.resolve(process.env.LAMBDA_
 exports.handler = async (event, context) => {
     try {
         const f = await fsp.readFile(`${dir}${resolved}`, "utf8");
+        console.log(JSON.parse(f));
         return {
             statusCode: 200,
-            body: JSON.stringify({ data: f })
+            body: JSON.stringify(JSON.parse(f))
         };
     } catch (e) {
         return {
