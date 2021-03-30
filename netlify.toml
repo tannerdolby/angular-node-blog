@@ -4,6 +4,6 @@
     publish = "dist/blog-client"
 
  [[redirects]]
-    from = "/*"
+    from = "/app/*"
     to = "/.netlify/functions/:splat"
     status = 200

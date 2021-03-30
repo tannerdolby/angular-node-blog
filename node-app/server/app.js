@@ -3,17 +3,13 @@ const app = express();
 const router = express.Router();
 const cors = require("cors");
 const path = require("path");
-const port = process.env.PORT || 4000;
 const serverless = require("serverless-http");
 const bodyParser = require("body-parser");
 const fs = require("fs");
-const assetsDir = "./node-app/dist/assets";
-const slugify = require("./_helpers/slugify");
-// const env = require("/blog-client/app/src/environments/environment");
 
 app.use(cors({
     optionsSuccessStatus: 200,
-    origin: "http://localhost:9000"
+    origin: "http://localhost:4200"
 }));
 app.options("*", cors());
 
@@ -35,17 +31,6 @@ app.use("/.netlify/functions/app", getPostByTagRouter);
 router.get("/test", async (req, res) => {
     res.json({ hey: "you" });
 });
-
-router.get("/blah", (req, res) => {
-    fs.readFile("./dist/blog-client/assets/blog.json", (err, data) => {
-        if (err) {
-            console.log(err);
-            //res.status(400).json({ error: err, msg: "FAILED" });
-        }
-        console.log(JSON.parse(data));
-        res.status(200).json({ ya: JSON.parse(data) });
-    });
-})
 
 // Local Dev
 //app.use("/", router);

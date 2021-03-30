@@ -17,10 +17,12 @@ export class HomeComponent implements OnInit {
     this.postService.getAllPosts().subscribe((response: any) => {
       response.forEach((r: any) => {
         r.date = new Date(r.date);
+        r.slug = this.postService.slugify(r.title);
         this.tags = r.tags;
       });
       console.log(response);
-      this.recent = response.sort((a: any, b: any) => a.date - b.date);
+      // get the 3 most recent blog posts
+      this.recent = response.sort((a: any, b: any) => a.date - b.date).slice(0, 3);
     });
   }
 }
