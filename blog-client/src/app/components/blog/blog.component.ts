@@ -13,8 +13,8 @@ export class BlogComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    this.postService.getAllPosts().subscribe(response => {
-      this.articles = response;
+    this.postService.getAllPosts().subscribe((response: any) => {
+      this.articles = response.data;
       this.articles.map((a: any) => {
         a.slug = this.slugify(a.title);
       });

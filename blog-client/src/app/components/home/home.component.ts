@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.postService.getAllPosts().subscribe((response: any) => {
-      response.forEach((r: any) => {
+      response.data.forEach((r: any) => {
         r.date = new Date(r.date);
         r.slug = this.postService.slugify(r.title);
         this.tags = r.tags;
