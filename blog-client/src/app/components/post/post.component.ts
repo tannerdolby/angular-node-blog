@@ -45,7 +45,7 @@ export class PostComponent implements OnInit {
 
   nextPost(posts: any) {
     let index = this.pos;
-    let p = index + 1 >= posts.length ? posts.data[0] : posts.data[index + 1];
+    let p = index + 1 >= posts.data.length ? posts.data[0] : posts.data[index + 1];
     this.postService.getPost(p.slug).subscribe(response => {
       this.postData = response;
       if (this.pos >= posts.length - 1) {
@@ -59,7 +59,7 @@ export class PostComponent implements OnInit {
 
   prevPost(posts: any) {
     let index = this.pos;
-    let p = index - 1 < 0 ? posts.data[posts.length - 1] : posts.data[index - 1];
+    let p = index - 1 < 0 ? posts.data[posts.data.length - 1] : posts.data[index - 1];
     this.postService.getPost(p.slug).subscribe(response => {
       this.postData = response;
       if (this.pos <= 0) {
