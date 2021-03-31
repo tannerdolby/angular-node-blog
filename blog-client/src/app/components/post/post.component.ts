@@ -13,7 +13,6 @@ export class PostComponent implements OnInit {
   tags: String[] = [];
   pos: number = 0;
   updatePage: any = {};
-  files: any = [];
 
   constructor(private postService: PostService, private router: Router) { }
 
@@ -33,11 +32,6 @@ export class PostComponent implements OnInit {
         r.slug = this.postService.slugify(r.title);
       })
       this.pos = this.getPostIndex(this.postData, this.allPosts);
-    });
-
-    this.postService.getPostsFiles().subscribe(response => {
-      this.files = response;
-      console.log(response);
     });
   }
 

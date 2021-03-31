@@ -13,6 +13,7 @@ export class BlogComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
+    console.log(this.articles);
     this.postService.getAllPosts().subscribe(response => {
       this.articles = response;
       this.articles.map((a: any) => {

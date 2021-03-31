@@ -16,20 +16,17 @@ export class PostService {
   recentLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/recent";
   postLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog";
   allPostsLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog";
-  postsByTagLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog/category";
-  blogPostFiles: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/rawr";
-  postsMetadata: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/test";
-  getHtml: string = "https://api.github.com/repos/tannerdolby/angular-node-blog-template/contents/dist/blog-client/pages/:splat";
+  postsByTagLambdaUrl: string = "http://localhost:9000/.netlify/functions/app/blog/topics";
+  
+  // Production endpoints
+  blogPostFiles: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/post";
+  postsMetadata: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/metadata";
 
   constructor(private http: HttpClient) { }
 
   // use file name not slug
   getPost(slug: string) {
     return this.http.get(`${this.blogPostFiles}?name=${slug}`);
-  }
-
-  getPostsFiles() {
-    return this.http.get(`${this.blogPostFiles}`);
   }
 
   getAllPosts() {
