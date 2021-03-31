@@ -38,7 +38,7 @@ export class PostComponent implements OnInit {
   getPostIndex(data: any, allPosts: any) {
     let pos;
     if (data.metadata.slug) {
-      pos = allPosts.map((p: any) => p.slug).indexOf(data.metadata.slug);
+      pos = allPosts.data.map((p: any) => p.slug).indexOf(data.metadata.slug);
     }
     return pos;
   }
@@ -68,10 +68,6 @@ export class PostComponent implements OnInit {
       this.pos -= 1;
       }
     });
-  }
-
-  buildPost() {
-
   }
 
 }
