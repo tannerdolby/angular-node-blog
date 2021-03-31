@@ -3,15 +3,13 @@ const fs = require("fs");
 const router = express.Router();
 const assetsDir = "./node-app/dist/assets";
 
-router.get("/blog/category/:tag", (req, res) => {
+router.get("/blog/topics/:tag", (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     const { params } = req;
     const tag = params.tag;
     let postData;
     fs.readFile(`./node-app/dist/assets/blog.json`, "utf8", (err, data) => {
-        if (err) {
-            console.log(err);
-        }
+        if (err) throw err;
         postData = JSON.parse(data).filter(p => {
             return p.tags.includes(`${tag}`);
         });

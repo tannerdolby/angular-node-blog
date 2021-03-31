@@ -35,7 +35,7 @@ router.get("/test", async (req, res) => {
 // Local Dev
 //app.use("/", router);
 
-// Netlify Lambda function route
+// Netlify Lambda function route - for production
 app.use("/.netlify/functions/app", router);
 
 module.exports = app;
