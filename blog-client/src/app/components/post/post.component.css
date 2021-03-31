@@ -40,7 +40,7 @@ article img {
     text-decoration: underline;
 }
 
-.nav-posts {
+.post-btns {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,13 +48,13 @@ article img {
     margin-top: 2rem;
 }
 
-.nav-posts button {
+.post-btns button {
     border: .1rem solid #282d33;
     padding: .5rem 1rem;
     background-color: inherit;
 }
 
-.nav-posts button:hover {
+.post-btns button:hover {
     cursor: pointer;
     background-color: #282d33;
     color: #fff;

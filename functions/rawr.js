@@ -36,14 +36,13 @@ const fetchMetaData = (url) => {
 
 function slugify(str) {
     let regex = new RegExp(/\W+/, 'gm');
-    str.replace(regex, "")
-    let slug = str.toLowerCase().split(" ").join("-");
+    let slug = str.replace(regex, " ").toLowerCase().split(" ").join("-");
     return slug;
 }
 
 exports.handler = async (event, context) => {
     const postName = event.queryStringParameters.name || "No filename provided or file not found.";
-    console.log(postName);
+    
     // Fetch directory of blog post files from GitHub API
     return fetch(endpoint, { headers: { 
         'Accept': 'application/json',
