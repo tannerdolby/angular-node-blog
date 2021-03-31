@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       });
       console.log(response);
       // get the 3 most recent blog posts
-      this.recent = response.sort((a: any, b: any) => a.date - b.date).slice(0, 3);
+      this.recent = response.data.sort((a: any, b: any) => a.date - b.date).slice(0, 3);
     });
   }
 }
