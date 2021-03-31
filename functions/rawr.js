@@ -34,9 +34,16 @@ const fetchMetaData = (url) => {
     }});
 }
 
+function slugify(str) {
+    let regex = new RegExp(/\W+/, 'gm');
+    str.replace(regex, "")
+    let slug = str.toLowerCase().split(" ").join("-");
+    return slug;
+}
+
 exports.handler = async (event, context) => {
-    const fileName = event.queryStringParameters.file || "No file provided or file not found.";
-    console.log(fileName);
+    const postName = event.queryStringParameters.name || "No filename provided or file not found.";
+    console.log(postName);
     // Fetch directory of blog post files from GitHub API
     return fetch(endpoint, { headers: { 
         'Accept': 'application/json',
@@ -47,26 +54,24 @@ exports.handler = async (event, context) => {
     })
         .then((response) => response.json())
         .then(async (data) => {
-            // get file from directory based on ?file=splat
-            let file = data.filter(d => {
-                return d.name === fileName;
-            });
-
-            // assuming some-url?ref=master (just slicing off the branch reference)
-            const apiUrl = file[0].url.slice(0, file[0].url.length - 11);
-
-            // use filtered file object url in function to hit GitHub API
-            let content = await extract(findAndRead(apiUrl));
             let meta = await fetchMetaData("https://api.github.com/repos/tannerdolby/angular-node-blog-template/contents/dist/blog-client/assets/blog.json")
                     .then(response => response.json())
                     .then(json => json)
                     .catch(err => console.error(err));
-
-            // grab the metadata from blog.json for the specific post
             let metadata = JSON.parse(base64.decode(meta.content))
-                .filter(d => {
-                    return d.template === file[0].name;
-                })
+                        .filter(d => {
+                            return slugify(d.title) === postName;
+                        })
+            let file = data.filter(f => {
+                return f.name === metadata[0].template;
+            });
+
+            // assuming some-url?ref=master (just slicing off the branch reference)
+            const apiUrl = file[0].url.slice(0, file[0].url.length - 11);
+            
+            // use filtered file object url in function to hit GitHub API
+            let content = await extract(findAndRead(apiUrl));
+
             return {
                 statusCode: 200,
                 body: JSON.stringify({ contents: content, metadata: metadata })

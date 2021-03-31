@@ -23,8 +23,9 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
+  // use file name not slug
   getPost(slug: string) {
-    return this.http.get(`${this.blogPostFiles}?file=${slug}`);
+    return this.http.get(`${this.blogPostFiles}?name=${slug}`);
   }
 
   getPostsFiles() {
