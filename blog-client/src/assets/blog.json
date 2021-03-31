@@ -8,7 +8,7 @@
         ],
         "template": "learn-mongo-db.html",
         "image": "./assets/images/mongodb.jpeg",
-        "preview": "MongoDB is becoming one the most versatile and popular databases. I personally really enjoy working with NoSQL databases like MongoDB because I prefer using JSON to store data rather than columns and rows (vanilla SQL)."
+        "preview": "MongoDB is becoming one of the most versatile and popular databases. I personally really enjoy working with NoSQL databases like MongoDB because I prefer using JSON to store data rather than columns and rows which relational databases use."
     },
     {
         "title": "Learn About Components in Angular",
