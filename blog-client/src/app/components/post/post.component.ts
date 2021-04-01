@@ -38,7 +38,10 @@ export class PostComponent implements OnInit {
   getPostIndex(data: any, allPosts: any) {
     let pos;
     console.log(data);
-    console.log(allPosts);
+    allPosts.data.map((d: any) => {
+      d.slug = this.postService.slugify(d.title);
+    });
+    console.log(allPosts.data);
     if (data.metadata.slug) {
       pos = allPosts.data.map((p: any) => p.slug).indexOf(data.metadata.slug);
     }
