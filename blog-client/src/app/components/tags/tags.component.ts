@@ -17,6 +17,7 @@ export class TagsComponent implements OnInit {
 
   ngOnInit(): void {
     this.tag = window.location.pathname.substr(15);
+    console.log(this.tag);
     this.postService.getPostsByTag(this.tag).subscribe((response: any) => {
       response.forEach((r: any) => {
         r.slug = this.postService.slugify(r.title);
