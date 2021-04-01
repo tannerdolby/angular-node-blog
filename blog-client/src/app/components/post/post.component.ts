@@ -48,13 +48,15 @@ export class PostComponent implements OnInit {
     let p = index + 1 >= posts.data.length ? posts.data[0] : posts.data[index + 1];
     this.postService.getPost(p.slug).subscribe(response => {
       this.postData = response;
-      if (this.pos >= posts.length - 1) {
+      if (this.pos >= posts.data.length - 1) {
         this.pos = 0;
       } else {
         this.pos += 1;
       }
       console.log(this.pos);
     });
+    // make sure URL changes
+    this.router.navigate([`/blog/${p.slug}`]);
   }
 
   prevPost(posts: any) {
@@ -63,11 +65,13 @@ export class PostComponent implements OnInit {
     this.postService.getPost(p.slug).subscribe(response => {
       this.postData = response;
       if (this.pos <= 0) {
-        this.pos = posts.length - 1;
+        this.pos = posts.data.length - 1;
       } else {
       this.pos -= 1;
       }
     });
+    // make sure URL changes
+    this.router.navigate([`/blog/${p.slug}`]);
   }
 
 }

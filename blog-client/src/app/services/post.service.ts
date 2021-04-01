@@ -21,7 +21,8 @@ export class PostService {
   // Production endpoints
   blogPostFiles: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/post";
   postsMetadata: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/metadata";
-
+  postsByTag: string = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/tagged";
+  
   constructor(private http: HttpClient) { }
 
   // use file name not slug
@@ -40,7 +41,7 @@ export class PostService {
   }
 
   getPostsByTag(tag: string) {
-    return this.http.get(`${this.postsByTagLambdaUrl}/${tag}`);
+    return this.http.get(`${this.postsByTag}?tag=${tag}`);
   }
 
   slugify(str: string) {
