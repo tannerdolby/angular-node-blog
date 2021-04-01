@@ -1,9 +1,10 @@
 const fetch = require("node-fetch");
-const metadataUrl = "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/metadata";
+const { endpoints } = require("../blog-client/")
+const metadataUrl = "https://anodeblog/.netlify/functions/metadata";
 
 exports.handler = async (event, context) => {
     const tag = event.queryStringParameters.tag || null;
-    
+
     try {
         const files = await fetch(metadataUrl)
             .then(response => response.json())

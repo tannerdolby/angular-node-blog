@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tanner Dolby",
   "license": "ISC",
   "dependencies": {
     "node-fetch": "^2.6.1"
