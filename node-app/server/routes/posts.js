@@ -9,10 +9,10 @@ router.get("/recent", (req, res) => {
     let metadata;
     fs.readFile(`./assets/blog.json`, "utf8", (err, data) => {
         if (err) {
-            console.log(err);
+            console.error(err);
         }
         metadata = JSON.parse(data);
-        console.log(metadata);
+        console.error(metadata);
         metadata.forEach(f => {
             f.slug = slugify(f.title);
             f.date = Date.parse(f.date);
@@ -26,7 +26,7 @@ router.get("/blog", (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     fs.readFile(`./assets/blog.json`, "utf8", (err, data) => {
         if (err) {
-            console.log(err);
+            console.error(err);
         }
         metadata = data;
         res.status(200).json(JSON.parse(data));

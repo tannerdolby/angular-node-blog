@@ -31,7 +31,7 @@ router.get("/blog/:post", (req, res) => {
             } else {
                 fs.readFile(`./dist/blog-client/assets/blog.json`, "utf8", (err, data) => {
                     if (err) {
-                        console.log(err);
+                        console.error(err);
                     }
                     metadata = JSON.parse(data);
                     // if each read file has a corresponding metadata object
