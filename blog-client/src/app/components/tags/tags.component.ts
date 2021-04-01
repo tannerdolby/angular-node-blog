@@ -22,7 +22,6 @@ export class TagsComponent implements OnInit {
       response.forEach((r: any) => {
         r.slug = this.postService.slugify(r.title);
       });
-      console.log(response);
       this.postsWithTag = response;
     })
   }

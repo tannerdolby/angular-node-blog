@@ -53,7 +53,6 @@ export class PostComponent implements OnInit {
       } else {
         this.pos += 1;
       }
-      console.log(this.pos);
     });
     // make sure URL changes
     this.router.navigate([`/blog/${p.slug}`]);

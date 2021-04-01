@@ -3,7 +3,7 @@
     <div class="tagged">
         <p *ngIf="postsWithTag.length > 1" class="posts-tagged">{{ postsWithTag.length }} posts tagged: #{{ tag }}</p>
         <p *ngIf="postsWithTag.length === 1" class="posts-tagged">{{ postsWithTag.length }} post tagged: #{{ tag }}</p>
-        <button (click)="clear()">clear</button>
+        <button *ngIf="postsWithTag.length !== 0" (click)="clear()">clear</button>
     </div>
     <section>
         <mat-card *ngFor="let article of postsWithTag" role="group">

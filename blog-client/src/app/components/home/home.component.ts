@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
         r.slug = this.postService.slugify(r.title);
         this.tags = r.tags;
       });
-      console.log(response);
       // get the 3 most recent blog posts
       this.recent = response.data.sort((a: any, b: any) => a.date - b.date).slice(0, 3);
     });
