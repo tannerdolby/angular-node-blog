@@ -16,8 +16,8 @@ export class TagsComponent implements OnInit {
   constructor(private postService: PostService, private router: Router) { }
 
   ngOnInit(): void {
-    this.tag = window.location.pathname.substr(15);
-    console.log(this.tag);
+    // grab tag from URL `/blog/topics/:tag`
+    this.tag = window.location.pathname.substr(13);
     this.postService.getPostsByTag(this.tag).subscribe((response: any) => {
       response.forEach((r: any) => {
         r.slug = this.postService.slugify(r.title);

@@ -1,10 +1,13 @@
 <div class="wrapper">
     <h1>Blog</h1>
-    <div class="tagged">
+    <div class="tagged" *ngIf="postsWithTag.length !== 0; else error">
         <p *ngIf="postsWithTag.length > 1" class="posts-tagged">{{ postsWithTag.length }} posts tagged: #{{ tag }}</p>
         <p *ngIf="postsWithTag.length === 1" class="posts-tagged">{{ postsWithTag.length }} post tagged: #{{ tag }}</p>
         <button (click)="clear()">clear</button>
     </div>
+    <ng-template #error>
+        <h3>Error connecting to data store. My apologies, please try again shortly.</h3>
+    </ng-template>
     <section>
         <mat-card *ngFor="let article of postsWithTag" role="group">
             <mat-card-title><a routerLink="/blog/{{ article.slug }}">{{ article.title }}</a></mat-card-title>
