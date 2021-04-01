@@ -14,6 +14,7 @@ a {
 article h1 {
     font-size: 2.5rem;
     margin-top: .5rem;
+    line-height: 1.4;
 }
 
 article .date {
@@ -59,4 +60,10 @@ article img {
     background-color: #282d33;
     color: #fff;
     border: .1rem solid transparent;
+}
+
+@media screen and (max-width: 550px) {
+    .wrapper {
+        margin: .25rem auto;
+    }
 }
