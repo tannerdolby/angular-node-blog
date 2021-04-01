@@ -41,10 +41,9 @@ export class PostComponent implements OnInit {
     allPosts.metadata.map((d: any) => {
       d.slug = this.postService.slugify(d.title);
     });
-    console.log(allPosts, "allPosts param");
     
-    pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug);
-
+    pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug) || 0;
+    console.log(pos);
     return pos;
   }
 

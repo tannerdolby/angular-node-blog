@@ -3,11 +3,10 @@ const metadataUrl = "https://anodeblog.netlify.app/.netlify/functions/metadata";
 
 exports.handler = async (event, context) => {
     const tag = event.queryStringParameters.tag || null;
-
     try {
         const files = await fetch(metadataUrl)
             .then(response => response.json())
-            .then(json => json.data);
+            .then(json => json.metadata);
 
         const filtered = files.filter(f => {
             return f.tags.includes(tag);
