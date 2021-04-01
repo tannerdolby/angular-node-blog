@@ -4,6 +4,6 @@
     publish = "dist/blog-client"
 
    [[redirects]]
-      from = "https://modest-bhabha-3a9de8.netlify.app/*"
-      to = "https://modest-bhabha-3a9de8.netlify.app"
+      from = "https://anodeblog.netlify.app/*"
+      to = "https://anodeblog.netlify.app"
       status = 200
