@@ -6,16 +6,13 @@
         <p class="hero-desc">A blog template built with Angular (Angular Material) and Node.js (Express). The blog posts are created within the <code>/pages</code> directory and are rendered on their respective pages using an API endpoint and a single "posts" component which acts as a template to display each blog post. Update the <code>/assets/blog.json</code> data with each blog posts metadata.</p>
         <section>
             <h2>Recent Articles</h2>
-            <div class="articles" *ngIf="recent !== undefined; else error">
+            <div class="articles" *ngIf="recent !== undefined">
                 <mat-card *ngFor="let article of recent" role="group">
                     <mat-card-title><a routerLink="/blog/{{ article.slug }}">{{ article.title }}</a></mat-card-title>
                     <mat-card-subtitle>Published on <time>{{ article.date | date }}</time> &bull; tagged with <a class="tag" *ngFor="let tag of article.tags" routerLink="/blog/topics/{{ tag }}">#{{ tag }}</a></mat-card-subtitle>
                     <mat-card-content>{{ article.preview }}</mat-card-content>
                 </mat-card>
             </div>
-            <ng-template #error>
-                <h3>Problem connecting to the data store. My apologies, please check back again shortly.</h3>
-            </ng-template>
         </section>
     </div>
 </div>

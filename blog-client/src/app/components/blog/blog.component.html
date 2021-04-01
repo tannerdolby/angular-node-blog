@@ -1,15 +1,12 @@
 <div class="wrapper">
     <h1>Blog</h1>
     <section>
-        <div class="article" *ngIf="articles.length !== 0 else error">
+        <div class="article" *ngIf="articles.length !== 0">
             <mat-card *ngFor="let article of articles" role="group">
                 <mat-card-title><a routerLink="/blog/{{ article.slug }}">{{ article.title }}</a></mat-card-title>
                 <mat-card-subtitle class="date">Published on <time>{{ article.date | date }}</time> &bull; tagged with <a class="tag" *ngFor="let tag of article.tags" routerLink="/blog/topics/{{ tag }}">#{{ tag }}</a></mat-card-subtitle>
                 <mat-card-content>{{ article.preview }}</mat-card-content>
             </mat-card>
         </div>
-        <ng-template #error>
-            <h3>Problem connecting to the data store. My apologies, please check back again shortly.</h3>
-        </ng-template>
     </section>
 </div>
