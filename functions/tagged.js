@@ -1,5 +1,4 @@
 const fetch = require("node-fetch");
-const { endpoints } = require("../blog-client/")
 const metadataUrl = "https://anodeblog/.netlify/functions/metadata";
 
 exports.handler = async (event, context) => {
