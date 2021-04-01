@@ -18,11 +18,13 @@ export class TagsComponent implements OnInit {
   ngOnInit(): void {
     // grab tag from URL `/blog/topics/:tag`
     this.tag = window.location.pathname.substr(13);
+    console.timeLog(this.tag);
     this.postService.getPostsByTag(this.tag).subscribe((response: any) => {
       response.forEach((r: any) => {
         r.slug = this.postService.slugify(r.title);
       });
       this.postsWithTag = response;
+      console.log(response);
     })
   }
 

@@ -42,16 +42,15 @@ export class PostComponent implements OnInit {
       d.slug = this.postService.slugify(d.title);
     });
     console.log(allPosts, "allPosts param");
-    console.log(data.metadata.slug, "<- data.metadata.slug value");
+    
+    pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug);
 
-    if (data.metadata.slug) {
-      pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata.slug);
-    }
     return pos;
   }
 
   nextPost(posts: any) {
     let index = this.pos;
+    console.log(posts);
     let p = index + 1 >= posts.metadata.length ? posts.metadata[0] : posts.metadata[index + 1];
     this.postService.getPost(p.slug).subscribe(response => {
       this.postData = response;
