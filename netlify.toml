@@ -3,7 +3,7 @@
     functions = "functions"
     publish = "dist/blog-client"
 
- [[redirects]]
-    from = "/*"
-    to = "/.netlify/functions/app"
-    status = 200
+   [[redirects]]
+      from = "https://modest-bhabha-3a9de8.netlify.app/*"
+      to = "https://modest-bhabha-3a9de8.netlify.app"
+      status = 200
