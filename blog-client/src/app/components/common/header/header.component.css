@@ -79,11 +79,9 @@ nav ul li a:hover {
     nav .wrapper .nav-links {
         flex-wrap: wrap;
     }
+}
 
-    nav .wrapper .nav-links a:last-child {
-        padding-left: 0;
-    }
-
+@media screen and (max-width: 350px) {
     nav .wrapper .nav-links li:last-child {
         margin-top: .5rem;
     }
