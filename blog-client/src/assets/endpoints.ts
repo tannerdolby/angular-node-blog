@@ -1,9 +1,9 @@
 export const endpoints = {
     "prod": {
-        "post": "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/post",
-        "postsMetadata": "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/metadata",
-        "recentPosts": "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/metadata",
-        "postsByTag": "https://modest-bhabha-3a9de8.netlify.app/.netlify/functions/tagged"
+        "post": "https://anodeblog.netlify.app/.netlify/functions/post",
+        "postsMetadata": "https://anodeblog.netlify.app/.netlify/functions/metadata",
+        "recentPosts": "https://anodeblog.netlify.app/.netlify/functions/metadata",
+        "postsByTag": "https://anodeblog.netlify.app/.netlify/functions/tagged"
     },
     "lambda-dev": {
         "post": "http://localhost:9000/.netlify/functions/app/blog/",
