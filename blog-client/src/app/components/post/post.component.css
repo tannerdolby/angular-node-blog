@@ -54,11 +54,17 @@ article img {
     background-color: inherit;
 }
 
-.post-btns button:hover {
+.post-btns button:hover,
+.post-btns button:focus {
     cursor: pointer;
     background-color: #282d33;
     color: #fff;
     border: .1rem solid transparent;
+}
+
+.post-btns:not(button:hover),
+.post-btns:not(button:focus) {
+    background: inherit;
 }
 
 @media screen and (max-width: 550px) {

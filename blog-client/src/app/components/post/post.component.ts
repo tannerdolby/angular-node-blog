@@ -28,7 +28,7 @@ export class PostComponent implements OnInit {
 
     this.postService.getAllPosts().subscribe((response: any) => {
       this.allPosts = response;
-      response.data.map((r: any) => {
+      response.metadata.map((r: any) => {
         r.slug = this.postService.slugify(r.title);
       })
       this.pos = this.getPostIndex(this.postData, this.allPosts);
@@ -38,22 +38,23 @@ export class PostComponent implements OnInit {
   getPostIndex(data: any, allPosts: any) {
     let pos;
     console.log(data);
-    allPosts.data.map((d: any) => {
+    allPosts.metadata.map((d: any) => {
       d.slug = this.postService.slugify(d.title);
     });
-    console.log(allPosts.data);
+    console.log(allPosts);
+
     if (data.metadata.slug) {
-      pos = allPosts.data.map((p: any) => p.slug).indexOf(data.metadata.slug);
+      pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata.slug);
     }
     return pos;
   }
 
   nextPost(posts: any) {
     let index = this.pos;
-    let p = index + 1 >= posts.data.length ? posts.data[0] : posts.data[index + 1];
+    let p = index + 1 >= posts.metadata.length ? posts.metadata[0] : posts.metadata[index + 1];
     this.postService.getPost(p.slug).subscribe(response => {
       this.postData = response;
-      if (this.pos >= posts.data.length - 1) {
+      if (this.pos >= posts.metadata.length - 1) {
         this.pos = 0;
       } else {
         this.pos += 1;
@@ -65,11 +66,11 @@ export class PostComponent implements OnInit {
 
   prevPost(posts: any) {
     let index = this.pos;
-    let p = index - 1 < 0 ? posts.data[posts.data.length - 1] : posts.data[index - 1];
+    let p = index - 1 < 0 ? posts.metadata[posts.data.length - 1] : posts.metadata[index - 1];
     this.postService.getPost(p.slug).subscribe(response => {
       this.postData = response;
       if (this.pos <= 0) {
-        this.pos = posts.data.length - 1;
+        this.pos = posts.metadata.length - 1;
       } else {
       this.pos -= 1;
       }

@@ -61,6 +61,8 @@ exports.handler = async (event, context) => {
                         .filter(d => {
                             return slugify(d.title) === postName;
                         })
+            metadata[0].slug = slugify(metadata[0].title);
+            
             let file = data.filter(f => {
                 return f.name === metadata[0].template;
             });
