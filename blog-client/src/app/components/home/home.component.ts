@@ -15,13 +15,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.postService.getAllPosts().subscribe((response: any) => {
-      response.data.forEach((r: any) => {
+      response.metadata.forEach((r: any) => {
         r.date = new Date(r.date);
         r.slug = this.postService.slugify(r.title);
         this.tags = r.tags;
       });
       // get the 3 most recent blog posts
-      this.recent = response.data.sort((a: any, b: any) => a.date - b.date).slice(0, 3);
+      this.recent = response.metadata.sort((a: any, b: any) => a.date - b.date).slice(0, 3);
     });
   }
 }

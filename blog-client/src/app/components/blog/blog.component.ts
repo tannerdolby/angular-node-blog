@@ -14,7 +14,7 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.postService.getAllPosts().subscribe((response: any) => {
-      this.articles = response.data;
+      this.articles = response.metadata;
       this.articles.map((a: any) => {
         a.slug = this.slugify(a.title);
       });
