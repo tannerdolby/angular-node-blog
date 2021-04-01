@@ -27,14 +27,18 @@ body {
 
 pre {
     background-color: rgb(238, 238, 238);
+    background-color: #272822;
     padding: 0 1rem;
     font-family: 'Monaco', sans-serif;
     border-radius: .35rem;
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 pre code {
     padding: .5rem;
     background: transparent;
+    color: #fff;
 }
 
 code {
@@ -43,6 +47,7 @@ code {
     word-spacing: normal;
     word-wrap: normal;
     text-align: left;
+    word-break: normal;
     font-family: 'Menlo', 'Monaco', sans-serif;
     padding: .25rem;
     font-size: .9rem;
