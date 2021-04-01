@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const metadataUrl = "https://anodeblog/.netlify/functions/metadata";
+const metadataUrl = "https://anodeblog.netlify.app/.netlify/functions/metadata";
 
 exports.handler = async (event, context) => {
     const tag = event.queryStringParameters.tag || null;
