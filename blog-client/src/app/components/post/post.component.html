@@ -2,7 +2,7 @@
     <article *ngIf="postData.metadata !== undefined && postData.contents !== undefined">
         <h1>{{ postData.metadata[0].title }}</h1>
         <p class="date">Published on <time>{{ postData.metadata[0].date | date }}</time> &bull; tagged with <a class="tag" *ngFor="let tag of postData.metadata[0].tags" routerLink="/blog/topics/{{ tag }}">#{{ tag }}</a></p>
-        <img src="{{ postData.metadata[0].image }}" alt="Some alt text">
+        <img *ngIf="postData.metadata[0].image !== undefined" src="{{ postData.metadata[0].image }}" alt="Some alt text">
         <p>{{ postData.metadata[0].preview }}</p>
         <div [innerHTML]="postData.contents"></div>
     </article>
