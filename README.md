@@ -3,8 +3,8 @@ A starter site for creating your own blog with Angular and Node.js. Angular Mate
 
 ## Getting Started
 To get the project running locally on your machine:
-1. Fork this repository
-2. Clone `git clone git@github.com:tannerdolby/angular-node-blog-template.git`
+1. Click the "Use this template" button or fork this repository
+2. Clone `git clone git@github.com:your-username/angular-node-blog-template.git`
 3. Install dependencies `npm install` (in both `blog-client` and `node-app` directories)
 4. Serve locally `npm run dev` in `node-app` (you can also optionally run the Angular `blog-client` with `ng serve`)
 
@@ -14,6 +14,12 @@ To get the project running locally on your machine:
 - Post page with the specific blog post
 - About me page
 - Contact me page
+
+## Hosting
+
+You can headover to [Netlify](https://www.netlify.com/) to create an account if you don't already have one. Once you have setup the project locally, ie you clicked "Use this template" button or forked the repository. Next, simply login to your Netlify account and click "New site from git" then choose the repository in your users organization where this template is and your site will be deployed! 
+
+Once your site is deployed on Netlify, make sure to take note of the sites URL. You will need to update the API endpoints located in `blog-client/assets/endpoints.ts`. This makes sure the right endpoints are being hit when making API calls. See [Notes](https://github.com/tannerdolby/angular-node-blog-template/blob/master/NOTES.md) for more.
 
 ## Usage
 All blog posts will be stored in the `blog-client/src/app/pages` directory in the angular client. To add a new blog post, simply create a new HTML file, `new-post.html` in the `/pages` directory and write your post.
