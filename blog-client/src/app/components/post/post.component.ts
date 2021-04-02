@@ -41,10 +41,10 @@ export class PostComponent implements OnInit {
       this.postData = response;
       console.log(this.postData, "in getPost method");
       this.tags = response.metadata.tags;
-      pos = allPosts.metadata.map((p: any) => p.slug).indexOf(response.metadata[0].slug);
+      this.pos = allPosts.metadata.map((p: any) => p.slug).indexOf(response.metadata[0].slug);
     });
-    console.log(pos);
-    return pos;
+
+    return this.pos;
   }
 
   nextPost(posts: any) {
