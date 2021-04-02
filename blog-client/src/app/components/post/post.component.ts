@@ -20,12 +20,9 @@ export class PostComponent implements OnInit {
     // get the location of the current URLs path
     const slug = window.location.pathname.substr(6);
     const routerSlug = this.router.url.slice(6);
-    console.log(slug, " window slug");
-    console.log(routerSlug, " router slug")
     
     this.postService.getPost(slug).subscribe((response: any) => {
       this.postData = response;
-      console.log(this.postData, " on ngOnInit in getPost()")
       this.tags = response.metadata.tags;
     });
 
@@ -34,8 +31,9 @@ export class PostComponent implements OnInit {
       response.metadata.map((r: any) => {
         r.slug = this.postService.slugify(r.title);
       })
-      console.log(this.postData, " on ngOnInit in getAllPosts()")
-      this.pos = this.getPostIndex(this.postData, this.allPosts);
+      if (this.postData !== undefined) {
+        this.pos = this.getPostIndex(this.postData, this.allPosts);
+      }
     });
   }
 
@@ -47,6 +45,7 @@ export class PostComponent implements OnInit {
     console.log(data);
     console.log(allPosts);
     pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug);
+    console.log(pos);
     return pos !== undefined ? pos : 0;
   }
 
