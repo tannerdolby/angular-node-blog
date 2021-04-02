@@ -2,7 +2,7 @@ export const endpoints = {
     "prod": {
         "post": "https://anodeblog.netlify.app/.netlify/functions/post",
         "postsMetadata": "https://anodeblog.netlify.app/.netlify/functions/metadata",
-        "recentPosts": "https://anodeblog.netlify.app/.netlify/functions/metadata",
+        "recentPosts": "https://anodeblog.netlify.app/.netlify/functions/recent",
         "postsByTag": "https://anodeblog.netlify.app/.netlify/functions/tagged"
     },
     "lambda-dev": {
