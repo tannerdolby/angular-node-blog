@@ -13,14 +13,12 @@ export class PostService {
     return this.http.get(`${endpoints.prod.post}?name=${slug}`);
   }
 
+  getRecentPosts() {
+    return this.http.get(`${endpoints.prod.recentPosts}`);
+  }
+
   getAllPosts() {
-    return this.http.get(`${endpoints.prod.postsMetadata}`, { 
-      headers: { 
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-        'Content-Type': 'application/json;charset=UTF-8',
-        'Accept': "application/json"
-    }});
+    return this.http.get(`${endpoints.prod.postsMetadata}`);
   }
 
   getPostsByTag(tag: string) {

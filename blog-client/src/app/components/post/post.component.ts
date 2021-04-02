@@ -27,19 +27,15 @@ export class PostComponent implements OnInit {
   }
 
   getPostIndex(allPosts: any) {
-    let pos;
     allPosts.metadata.map((d: any) => {
       d.slug = this.postService.slugify(d.title);
     });
+
     // get the location of the current URLs path
     const slug = window.location.pathname.substr(6);
-    const routerSlug = this.router.url.slice(6);
-    console.log(slug);
-    console.log(routerSlug);
 
     this.postService.getPost(slug).subscribe((response: any) => {
       this.postData = response;
-      console.log(this.postData, "in getPost method");
       this.tags = response.metadata.tags;
       this.pos = allPosts.metadata.map((p: any) => p.slug).indexOf(response.metadata[0].slug);
     });
