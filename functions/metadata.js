@@ -21,11 +21,13 @@ exports.handler = async (event, context) => {
             let blogData = JSON.parse(base64.decode(json.content));
             let data = blogData.map(d => {
                 d.slug = slugify(d.title);
+                d.time = Date.parse(d.date);
                 return d;
             });
+            let sorted = data.sort((a, b) => b.time - a.time);
             return {
                 statusCode: 200,
-                body: JSON.stringify({ metadata: data })
+                body: JSON.stringify({ metadata: sorted })
             }
         })
         .catch(error => ({
