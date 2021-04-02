@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
         'Allow': 'application/json',
         'Accept': 'application/vnd.github.v3+json',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS'
     }})
         .then(response => response.json())
         .then(json => {
