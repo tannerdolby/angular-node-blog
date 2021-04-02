@@ -16,7 +16,7 @@ const findAndRead = async (apiUrl) => {
     }
 }
 
-const extract = async (p) => {
+const extract = (p) => {
     let data = p
             .then(response => response)
             .then(data => data)
@@ -41,7 +41,7 @@ function slugify(str) {
 }
 
 exports.handler = async (event, context) => {
-    const postName = event.queryStringParameters.name || "No filename provided or file not found.";
+    const postName = event.queryStringParameters.name;
     
     // Fetch directory of blog post files from GitHub API
     return fetch(endpoint, { headers: { 
@@ -57,11 +57,10 @@ exports.handler = async (event, context) => {
                     .then(response => response.json())
                     .then(json => json)
                     .catch(err => console.error(err));
-            console.log(meta);
             let metadata = JSON.parse(base64.decode(meta.content))
-                        .filter(d => {
-                            return slugify(d.title) === postName;
-                        })
+                    .filter(d => {
+                        return slugify(d.title) === postName;
+                    })
             metadata[0].slug = slugify(metadata[0].title);
 
             let file = data.filter(f => {
