@@ -20,9 +20,12 @@ export class PostComponent implements OnInit {
     // get the location of the current URLs path
     const slug = window.location.pathname.substr(6);
     const routerSlug = this.router.url.slice(6);
-    
+    console.log(slug);
+    console.log(routerSlug);
+
     this.postService.getPost(slug).subscribe((response: any) => {
       this.postData = response;
+      console.log(this.postData);
       this.tags = response.metadata.tags;
     });
 
@@ -31,28 +34,16 @@ export class PostComponent implements OnInit {
       response.metadata.map((r: any) => {
         r.slug = this.postService.slugify(r.title);
       })
-      this.pos = this.getPostIndex(this.postData, this.allPosts);
+      this.pos = this.getPostIndex(this.allPosts);
     });
   }
 
-  getPostIndex(data: any, allPosts: any) {
+  getPostIndex(allPosts: any) {
     let pos;
-    let slug = window.location.pathname.substr(6);
     allPosts.metadata.map((d: any) => {
       d.slug = this.postService.slugify(d.title);
     });
-    console.log(data);
-    console.log(allPosts);
-    // if this.postData is undefined then fetch the data 
-    if (data.metadata[0] === undefined) {
-      this.postService.getPost(slug).subscribe(response => {
-        data = response;
-        pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug);
-      });
-    } else {
-      pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug);
-    }
-    console.log(pos);
+    pos = allPosts.metadata.map((p: any) => p.slug).indexOf(this.postData.metadata[0].slug);
     return pos;
   }
 
