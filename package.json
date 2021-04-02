@@ -1,6 +1,6 @@
 {
   "name": "angular-node-blog-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node.js + Angular blog template prepared for Netlify.",
   "main": "functions/app.js",
   "dependencies": {
