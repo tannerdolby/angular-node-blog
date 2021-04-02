@@ -31,22 +31,29 @@ export class PostComponent implements OnInit {
       response.metadata.map((r: any) => {
         r.slug = this.postService.slugify(r.title);
       })
-      if (this.postData !== undefined) {
-        this.pos = this.getPostIndex(this.postData, this.allPosts);
-      }
+      this.pos = this.getPostIndex(this.postData, this.allPosts);
     });
   }
 
   getPostIndex(data: any, allPosts: any) {
     let pos;
+    let slug = window.location.pathname.substr(6);
     allPosts.metadata.map((d: any) => {
       d.slug = this.postService.slugify(d.title);
     });
     console.log(data);
     console.log(allPosts);
-    pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug);
+    // if this.postData is undefined then fetch the data 
+    if (data.metadata[0] === undefined) {
+      this.postService.getPost(slug).subscribe(response => {
+        data = response;
+        pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug);
+      });
+    } else {
+      pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug);
+    }
     console.log(pos);
-    return pos !== undefined ? pos : 0;
+    return pos;
   }
 
   nextPost(posts: any) {
