@@ -17,18 +17,6 @@ export class PostComponent implements OnInit {
   constructor(private postService: PostService, private router: Router) { }
 
   ngOnInit(): void {
-    // get the location of the current URLs path
-    const slug = window.location.pathname.substr(6);
-    const routerSlug = this.router.url.slice(6);
-    console.log(slug);
-    console.log(routerSlug);
-
-    this.postService.getPost(slug).subscribe((response: any) => {
-      this.postData = response;
-      console.log(this.postData);
-      this.tags = response.metadata.tags;
-    });
-
     this.postService.getAllPosts().subscribe((response: any) => {
       this.allPosts = response;
       response.metadata.map((r: any) => {
@@ -43,6 +31,19 @@ export class PostComponent implements OnInit {
     allPosts.metadata.map((d: any) => {
       d.slug = this.postService.slugify(d.title);
     });
+    // get the location of the current URLs path
+    const slug = window.location.pathname.substr(6);
+    const routerSlug = this.router.url.slice(6);
+    console.log(slug);
+    console.log(routerSlug);
+
+    this.postService.getPost(slug).subscribe((response: any) => {
+      this.postData = response;
+      console.log(this.postData, "in getPost method");
+      this.tags = response.metadata.tags;
+    });
+    
+    console.log(this.postData);
     pos = allPosts.metadata.map((p: any) => p.slug).indexOf(this.postData.metadata[0].slug);
     return pos;
   }
