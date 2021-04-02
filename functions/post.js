@@ -9,7 +9,7 @@ const findAndRead = async (apiUrl) => {
         let file = await fetch(`${apiUrl}`)
             .then(response => response.json())
             .then(json => json)
-            .catch(err => console.error(err + " ITS HAPPENING in findAndRead"));
+            .catch(err => console.error(err));
         let decoded = base64.decode(file.content);
         return decoded;
     } catch (err) {
@@ -58,7 +58,7 @@ exports.handler = async (event, context) => {
                 let meta = await fetchMetaData("https://api.github.com/repos/tannerdolby/angular-node-blog-template/contents/dist/blog-client/assets/blog.json")
                         .then(response => response.json())
                         .then(json => json)
-                        .catch(err => console.error(err + "THIS IS WHERE ITS FAILING"));
+                        .catch(err => console.error(err));
                 let metadata = JSON.parse(base64.decode(meta.content))
                         .filter(d => {
                             return slugify(d.title) === postName;
@@ -81,7 +81,7 @@ exports.handler = async (event, context) => {
                     body: JSON.stringify({ contents: content, metadata: metadata })
                 }
             } catch (err) {
-                console.error(err, "OR HERE");
+                console.error(err);
             }
         })
         .catch(error => ({ statusCode: 422, body: String(error) }))
