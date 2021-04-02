@@ -40,8 +40,10 @@ export class PostComponent implements OnInit {
     allPosts.metadata.map((d: any) => {
       d.slug = this.postService.slugify(d.title);
     });
-    pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug) || 0;
-    return pos ? pos : 0;
+    console.log(data);
+    console.log(allPosts);
+    pos = allPosts.metadata.map((p: any) => p.slug).indexOf(data.metadata[0].slug);
+    return pos !== undefined ? pos : 0;
   }
 
   nextPost(posts: any) {
