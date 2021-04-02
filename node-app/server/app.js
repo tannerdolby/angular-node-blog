@@ -28,7 +28,8 @@ app.use("/.netlify/functions/app", postRouter);
 app.use("/.netlify/functions/app", postsRouter);
 app.use("/.netlify/functions/app", getPostByTagRouter);
 
-router.get("/test", async (req, res) => {
+// accessed at /.netlify/functions/app/test
+router.get("/test", (req, res) => {
     res.json({ hey: "you" });
 });
 
