@@ -43,6 +43,6 @@ Netlify starter accounts provide really great features for hosting your own webs
 
 [Pricing is metered](https://www.netlify.com/blog/2018/03/20/netlifys-aws-lambda-functions-bring-the-backend-to-your-frontend-workflow/) for the Netlify Lambda functions so keep that in mind if you choose to host this full stack app with Netlify. Unless you expect alot of site traffic, the Netlify starter account limits are plenty for a personal website.
 
-You can find more detail about this project in a blog post I wrote. 
+You can find more detail about this project [here](https://tannerdolby.com/writing/creating-a-blog-template-with-angular-and-node.js/) in a blog post I wrote. 
 
 Thanks for reading! 🚀
