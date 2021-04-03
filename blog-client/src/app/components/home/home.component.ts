@@ -14,16 +14,9 @@ export class HomeComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    // this.postService.getAllPosts().subscribe((response: any) => {
-    //   response.metadata.forEach((r: any) => {
-    //     r.date = new Date(r.date);
-    //     r.slug = this.postService.slugify(r.title);
-    //     this.tags = r.tags;
-    //   });
-    //   this.recent = response.metadata;
-    // });
     this.postService.getRecentPosts().subscribe((response: any) => {
       response.metadata.forEach((r: any) => {
+        r.slug = this.postService.slugify(r.title);
         r.date = new Date(r.date);
         this.tags = r.tags;
       });
