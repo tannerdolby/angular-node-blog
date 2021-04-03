@@ -1,5 +1,5 @@
 # angular-node-blog-template
-A starter site for creating your own blog with Angular and Node.js. Angular Material was used for UI components and Express.js as the Node framework.
+A starter site for creating your own blog with Angular and Node.js. Angular Material was used for UI components and Express.js as the Node.js framework. Using [Netlify functions](https://www.netlify.com/products/functions/) allow for hosting fullstack applications on Netlify.
 
 ## Getting Started
 To get the project running locally on your machine:
@@ -7,6 +7,7 @@ To get the project running locally on your machine:
 2. Clone `git clone git@github.com:your-username/angular-node-blog-template.git`
 3. Install dependencies `npm install` (in both `blog-client` and `node-app` directories)
 4. Serve locally `npm run dev` in `node-app` (you can also optionally run the Angular `blog-client` with `ng serve`)
+5. Serve Netlify lambda functions locally with `npm run serve`
 
 ## Features
 - Home page with recent posts
@@ -14,12 +15,6 @@ To get the project running locally on your machine:
 - Post page with the specific blog post
 - About me page
 - Contact me page
-
-## Hosting
-
-You can headover to [Netlify](https://www.netlify.com/) to create an account if you don't already have one. Once you have setup the project locally, ie you clicked "Use this template" button or forked the repository. Next, simply login to your Netlify account and click "New site from git" then choose the repository in your users organization where this template is and your site will be deployed! 
-
-Once your site is deployed on Netlify, make sure to take note of the sites URL. You will need to update the API endpoints located in `blog-client/assets/endpoints.ts`. This makes sure the right endpoints are being hit when making API calls. See [Notes](https://github.com/tannerdolby/angular-node-blog-template/blob/master/NOTES.md) for more.
 
 ## Usage
 All blog posts will be stored in the `blog-client/src/app/pages` directory in the angular client. To add a new blog post, simply create a new HTML file, `new-post.html` in the `/pages` directory and write your post.
@@ -46,7 +41,13 @@ Now all of your blog posts in the `/pages` directory and post metadata in `/asse
 
 I originally used the [File System](https://nodejs.org/api/fs.html) module when developing locally but the lambda functions didn't play nicely with bringing other static files with them to aws, therefore the GitHub REST API allows us to fetch a file and read it's contents.
 
-Each post will be accessible via `/blog/some-post` where the title `some-post` represents the `title` keys in `blog.json` with the value slugified, (ie `title: "My Post"` would be accessed at `/blog/my-post`). You can view all blog posts via `/blog` and the most recent posts on the homepage. 
+Each post will be accessible via `/blog/some-post` where the title `some-post` represents the `title` keys in `blog.json` with the value slugified, (ie `title: "My Post"` would be accessed at `/blog/my-post`). You can view all blog posts via `/blog` and the most recent posts on the homepage.
+
+## Hosting
+
+You can headover to [Netlify](https://www.netlify.com/) to create an account if you don't already have one. Once you have setup the project locally, ie you clicked "Use this template" button or forked the repository. Next, simply login to your Netlify account and click "New site from git" then choose the repository in your users organization where this template is and your site will be deployed! 
+
+Once your site is deployed on Netlify, make sure to take note of the sites URL. You will need to update the API endpoints located in `blog-client/assets/endpoints.ts`. This makes sure the right endpoints are being hit when making API calls. See [Notes](https://github.com/tannerdolby/angular-node-blog-template/blob/master/NOTES.md) for more.
 
 ## Making changes
 
