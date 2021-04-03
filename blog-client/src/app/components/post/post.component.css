@@ -54,8 +54,7 @@ article img {
     background-color: inherit;
 }
 
-.post-btns button:hover,
-.post-btns button:focus {
+.post-btns button:hover {
     cursor: pointer;
     background-color: #282d33;
     color: #fff;

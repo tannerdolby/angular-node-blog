@@ -11,6 +11,11 @@ nav {
 .home ul li a,
 .home div a {
     color: #222;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: none;
 }
 
 .wrapper {
@@ -38,7 +43,7 @@ nav ul li a {
 
 nav ul li a:hover {
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .logo a {
