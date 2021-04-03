@@ -41,7 +41,7 @@
         ],
         "image": "./assets/images/nodeJS.png",
         "template": "file-system.html",
-        "preview": "A tutorial on how to read files using the File System module."
+        "preview": "A tutorial on how to read files using the File System module. Reading and writing files are a common task in programming. Using streams is a great way to read large files."
     }
 
 ]
