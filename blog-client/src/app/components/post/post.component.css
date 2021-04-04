@@ -56,9 +56,6 @@ article img {
 
 .post-btns button:hover {
     cursor: pointer;
-    background-color: #282d33;
-    color: #fff;
-    border: .1rem solid transparent;
 }
 
 .post-btns:not(button:hover),
